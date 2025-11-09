@@ -154,6 +154,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/markup.o: src/markup.c.o
+.PHONY : src/markup.o
+
+# target to build an object file
+src/markup.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/markup.c.o
+.PHONY : src/markup.c.o
+
+src/markup.i: src/markup.c.i
+.PHONY : src/markup.i
+
+# target to preprocess a source file
+src/markup.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/markup.c.i
+.PHONY : src/markup.c.i
+
+src/markup.s: src/markup.c.s
+.PHONY : src/markup.s
+
+# target to generate assembly for a file
+src/markup.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/markup.c.s
+.PHONY : src/markup.c.s
+
 src/markymark.o: src/markymark.c.o
 .PHONY : src/markymark.o
 
@@ -178,6 +202,30 @@ src/markymark.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/markymark.c.s
 .PHONY : src/markymark.c.s
 
+src/scanner.o: src/scanner.c.o
+.PHONY : src/scanner.o
+
+# target to build an object file
+src/scanner.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/scanner.c.o
+.PHONY : src/scanner.c.o
+
+src/scanner.i: src/scanner.c.i
+.PHONY : src/scanner.i
+
+# target to preprocess a source file
+src/scanner.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/scanner.c.i
+.PHONY : src/scanner.c.i
+
+src/scanner.s: src/scanner.c.s
+.PHONY : src/scanner.s
+
+# target to generate assembly for a file
+src/scanner.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/scanner.c.s
+.PHONY : src/scanner.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -190,9 +238,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/markup.o"
+	@echo "... src/markup.i"
+	@echo "... src/markup.s"
 	@echo "... src/markymark.o"
 	@echo "... src/markymark.i"
 	@echo "... src/markymark.s"
+	@echo "... src/scanner.o"
+	@echo "... src/scanner.i"
+	@echo "... src/scanner.s"
 .PHONY : help
 
 

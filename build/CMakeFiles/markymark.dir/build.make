@@ -86,10 +86,24 @@ CMakeFiles/markymark.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/markymark.dir/src/main.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/matty/marky-mark/src/main.c -o CMakeFiles/markymark.dir/src/main.c.s
 
+CMakeFiles/markymark.dir/src/markup.c.o: CMakeFiles/markymark.dir/flags.make
+CMakeFiles/markymark.dir/src/markup.c.o: /home/matty/marky-mark/src/markup.c
+CMakeFiles/markymark.dir/src/markup.c.o: CMakeFiles/markymark.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/matty/marky-mark/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/markymark.dir/src/markup.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/markymark.dir/src/markup.c.o -MF CMakeFiles/markymark.dir/src/markup.c.o.d -o CMakeFiles/markymark.dir/src/markup.c.o -c /home/matty/marky-mark/src/markup.c
+
+CMakeFiles/markymark.dir/src/markup.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/markymark.dir/src/markup.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/matty/marky-mark/src/markup.c > CMakeFiles/markymark.dir/src/markup.c.i
+
+CMakeFiles/markymark.dir/src/markup.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/markymark.dir/src/markup.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/matty/marky-mark/src/markup.c -o CMakeFiles/markymark.dir/src/markup.c.s
+
 CMakeFiles/markymark.dir/src/markymark.c.o: CMakeFiles/markymark.dir/flags.make
 CMakeFiles/markymark.dir/src/markymark.c.o: /home/matty/marky-mark/src/markymark.c
 CMakeFiles/markymark.dir/src/markymark.c.o: CMakeFiles/markymark.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/matty/marky-mark/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/markymark.dir/src/markymark.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/matty/marky-mark/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/markymark.dir/src/markymark.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/markymark.dir/src/markymark.c.o -MF CMakeFiles/markymark.dir/src/markymark.c.o.d -o CMakeFiles/markymark.dir/src/markymark.c.o -c /home/matty/marky-mark/src/markymark.c
 
 CMakeFiles/markymark.dir/src/markymark.c.i: cmake_force
@@ -100,20 +114,38 @@ CMakeFiles/markymark.dir/src/markymark.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/markymark.dir/src/markymark.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/matty/marky-mark/src/markymark.c -o CMakeFiles/markymark.dir/src/markymark.c.s
 
+CMakeFiles/markymark.dir/src/scanner.c.o: CMakeFiles/markymark.dir/flags.make
+CMakeFiles/markymark.dir/src/scanner.c.o: /home/matty/marky-mark/src/scanner.c
+CMakeFiles/markymark.dir/src/scanner.c.o: CMakeFiles/markymark.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/matty/marky-mark/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/markymark.dir/src/scanner.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/markymark.dir/src/scanner.c.o -MF CMakeFiles/markymark.dir/src/scanner.c.o.d -o CMakeFiles/markymark.dir/src/scanner.c.o -c /home/matty/marky-mark/src/scanner.c
+
+CMakeFiles/markymark.dir/src/scanner.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/markymark.dir/src/scanner.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/matty/marky-mark/src/scanner.c > CMakeFiles/markymark.dir/src/scanner.c.i
+
+CMakeFiles/markymark.dir/src/scanner.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/markymark.dir/src/scanner.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/matty/marky-mark/src/scanner.c -o CMakeFiles/markymark.dir/src/scanner.c.s
+
 # Object files for target markymark
 markymark_OBJECTS = \
 "CMakeFiles/markymark.dir/src/main.c.o" \
-"CMakeFiles/markymark.dir/src/markymark.c.o"
+"CMakeFiles/markymark.dir/src/markup.c.o" \
+"CMakeFiles/markymark.dir/src/markymark.c.o" \
+"CMakeFiles/markymark.dir/src/scanner.c.o"
 
 # External object files for target markymark
 markymark_EXTERNAL_OBJECTS =
 
 markymark: CMakeFiles/markymark.dir/src/main.c.o
+markymark: CMakeFiles/markymark.dir/src/markup.c.o
 markymark: CMakeFiles/markymark.dir/src/markymark.c.o
+markymark: CMakeFiles/markymark.dir/src/scanner.c.o
 markymark: CMakeFiles/markymark.dir/build.make
 markymark: CMakeFiles/markymark.dir/compiler_depend.ts
 markymark: CMakeFiles/markymark.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/matty/marky-mark/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable markymark"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/matty/marky-mark/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable markymark"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/markymark.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
