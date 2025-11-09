@@ -48,11 +48,44 @@ char advance() {
   return scanner.position[-1];
 }
 
+Token read(TokenType type, TokenType type2, TokenType type3, char c) {
+  int count = 1;
+  while (peek() == c) {
+    advance();
+    count++;
+  }
+
+  if (count == 1) {
+    return make_token(type);
+  } else if (count == 2) {
+    return make_token(type2);
+  } else if (count == 3) {
+    return make_token(type3);
+  } else {
+    return make_token(type);
+  }
+}
+
+bool is_number(char c) { return '0' <= c && c <= '9'; }
+
 Token read_text() {
   while (!is_at_line_ending() && !is_at_end())
     advance();
 
   return make_token(TOKEN_TEXT);
+}
+
+Token read_num() {
+  while (is_number(peek()))
+    advance();
+
+  if (peek() == '.') {
+    advance();
+
+    return make_token(TOKEN_NUM);
+  } else {
+    return read_text();
+  }
 }
 
 Token read_heading() {
@@ -131,11 +164,34 @@ Token scan_token() {
     return make_token(TOKEN_GT);
   case '!':
     return make_token(TOKEN_BANG);
+  case '*':
+    if (peek() == '*')
+      return read(TOKEN_STAR, TOKEN_STAR2, TOKEN_STAR3, '*');
+    else
+      return make_token(TOKEN_STAR);
+  case '-':
+    if (peek() == '-')
+      return read(TOKEN_MINUS, TOKEN_MINUS2, TOKEN_MINUS3, '-');
+    else
+      return make_token(TOKEN_MINUS);
+  case '_':
+    if (peek() == '_')
+      return read(TOKEN_UNDERSCORE, TOKEN_UNDERSCORE2, TOKEN_UNDERSCORE3, '_');
+    else
+      return make_token(TOKEN_UNDERSCORE);
+  case '`':
+    if (peek() == '`')
+      return read(TOKEN_TICK, TOKEN_TICK2, TOKEN_TICK3, '`');
+    else
+      return make_token(TOKEN_TICK);
   case '\n':
     scanner.line++;
     return make_token(TOKEN_LINE_ENDING);
   default:
-    return read_text();
+    if (is_number(c))
+      return read_num();
+    else
+      return read_text();
   }
 
   return error_token("unexpected character");
