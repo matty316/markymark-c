@@ -6,6 +6,8 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/matty/marky-mark/includ
 set(OLD_GLOB
   "/home/matty/marky-mark/include/markup.h"
   "/home/matty/marky-mark/include/markymark.h"
+  "/home/matty/marky-mark/include/scanner.h"
+  "/home/matty/marky-mark/include/token.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -16,7 +18,9 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/matty/marky-mark/src/*.c")
 set(OLD_GLOB
   "/home/matty/marky-mark/src/main.c"
+  "/home/matty/marky-mark/src/markup.c"
   "/home/matty/marky-mark/src/markymark.c"
+  "/home/matty/marky-mark/src/scanner.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

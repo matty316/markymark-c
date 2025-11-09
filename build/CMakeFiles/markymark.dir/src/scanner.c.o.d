@@ -1,6 +1,5 @@
-CMakeFiles/markymark.dir/src/markymark.c.o: \
- /home/matty/marky-mark/src/markymark.c /usr/include/stdc-predef.h \
- /home/matty/marky-mark/include/markymark.h \
+CMakeFiles/markymark.dir/src/scanner.c.o: \
+ /home/matty/marky-mark/src/scanner.c /usr/include/stdc-predef.h \
  /home/matty/marky-mark/include/scanner.h \
  /home/matty/marky-mark/include/token.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
@@ -14,12 +13,7 @@ CMakeFiles/markymark.dir/src/markymark.c.o: \
  /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h /home/matty/marky-mark/include/token.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
- /usr/include/stdio.h \
+ /usr/include/string.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
- /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \
- /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \
- /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \
- /usr/include/bits/types/cookie_io_functions_t.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \
- /usr/include/bits/floatn-common.h
+ /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
+ /usr/include/strings.h

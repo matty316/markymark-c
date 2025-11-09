@@ -7,8 +7,20 @@
 },
 {
   "directory": "/home/matty/marky-mark/build",
+  "command": "/usr/bin/cc  -I/home/matty/marky-mark/include -Wall -Wextra -g -o CMakeFiles/markymark.dir/src/markup.c.o -c /home/matty/marky-mark/src/markup.c",
+  "file": "/home/matty/marky-mark/src/markup.c",
+  "output": "CMakeFiles/markymark.dir/src/markup.c.o"
+},
+{
+  "directory": "/home/matty/marky-mark/build",
   "command": "/usr/bin/cc  -I/home/matty/marky-mark/include -Wall -Wextra -g -o CMakeFiles/markymark.dir/src/markymark.c.o -c /home/matty/marky-mark/src/markymark.c",
   "file": "/home/matty/marky-mark/src/markymark.c",
   "output": "CMakeFiles/markymark.dir/src/markymark.c.o"
+},
+{
+  "directory": "/home/matty/marky-mark/build",
+  "command": "/usr/bin/cc  -I/home/matty/marky-mark/include -Wall -Wextra -g -o CMakeFiles/markymark.dir/src/scanner.c.o -c /home/matty/marky-mark/src/scanner.c",
+  "file": "/home/matty/marky-mark/src/scanner.c",
+  "output": "CMakeFiles/markymark.dir/src/scanner.c.o"
 }
 ]

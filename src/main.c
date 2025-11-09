@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include "markymark.h"
 
 int main() {
-  printf("hello\n");
+  parse("### heading\n");
   return 0;
 }

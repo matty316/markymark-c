@@ -3,7 +3,9 @@ markymark: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
   CMakeFiles/markymark.dir/src/main.c.o \
+  CMakeFiles/markymark.dir/src/markup.c.o \
   CMakeFiles/markymark.dir/src/markymark.c.o \
+  CMakeFiles/markymark.dir/src/scanner.c.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so \
@@ -34,7 +36,11 @@ markymark: \
 
 CMakeFiles/markymark.dir/src/main.c.o:
 
+CMakeFiles/markymark.dir/src/markup.c.o:
+
 CMakeFiles/markymark.dir/src/markymark.c.o:
+
+CMakeFiles/markymark.dir/src/scanner.c.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a:
 
