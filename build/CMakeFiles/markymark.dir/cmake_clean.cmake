@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/markymark.dir/link.d"
   "CMakeFiles/markymark.dir/src/main.c.o"
   "CMakeFiles/markymark.dir/src/main.c.o.d"
   "CMakeFiles/markymark.dir/src/markup.c.o"
