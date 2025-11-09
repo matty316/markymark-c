@@ -84,8 +84,24 @@ Token read_heading() {
   }
 }
 
+void skip_whitespace() {
+  while (true) {
+    char c = peek();
+    switch (c) {
+    case ' ':
+    case '\r':
+    case '\t':
+      advance();
+      break;
+    default:
+      return;
+    }
+  }
+}
+
 Token scan_token() {
-  scanner.position = scanner.start;
+  skip_whitespace();
+  scanner.start = scanner.position;
 
   if (is_at_end())
     return make_token(TOKEN_EOF);
@@ -99,9 +115,22 @@ Token scan_token() {
     return make_token(TOKEN_LBRACKET);
   case ']':
     return make_token(TOKEN_RBRACKET);
-  case ' ':
-    return make_token(TOKEN_WHITESPACE);
-  case '\r':
+  case '=':
+    return make_token(TOKEN_EQ);
+  case '.':
+    return make_token(TOKEN_DOT);
+  case '+':
+    return make_token(TOKEN_PLUS);
+  case '(':
+    return make_token(TOKEN_LPAREN);
+  case ')':
+    return make_token(TOKEN_RPAREN);
+  case '<':
+    return make_token(TOKEN_LT);
+  case '>':
+    return make_token(TOKEN_GT);
+  case '!':
+    return make_token(TOKEN_BANG);
   case '\n':
     scanner.line++;
     return make_token(TOKEN_LINE_ENDING);

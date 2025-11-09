@@ -1,6 +1,6 @@
 #include "markymark.h"
 
 int main() {
-  parse("### heading\n");
+  parse("### this is a heading\r\n");
   return 0;
 }
