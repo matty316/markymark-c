@@ -1,0 +1,3 @@
+/home/matty/marky-mark/build/CMakeFiles/markymark.dir
+/home/matty/marky-mark/build/CMakeFiles/edit_cache.dir
+/home/matty/marky-mark/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/matty/marky-mark/build",
+  "command": "/usr/bin/cc  -I/home/matty/marky-mark/include -Wall -Wextra -g -o CMakeFiles/markymark.dir/src/main.c.o -c /home/matty/marky-mark/src/main.c",
+  "file": "/home/matty/marky-mark/src/main.c",
+  "output": "CMakeFiles/markymark.dir/src/main.c.o"
+},
+{
+  "directory": "/home/matty/marky-mark/build",
+  "command": "/usr/bin/cc  -I/home/matty/marky-mark/include -Wall -Wextra -g -o CMakeFiles/markymark.dir/src/markymark.c.o -c /home/matty/marky-mark/src/markymark.c",
+  "file": "/home/matty/marky-mark/src/markymark.c",
+  "output": "CMakeFiles/markymark.dir/src/markymark.c.o"
+}
+]
