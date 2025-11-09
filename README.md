@@ -4,14 +4,14 @@ a not very fully featured markdown parser written in ~~swift~~ c
 
 | element          | implemented | 
 | ---------------- | ----------- | 
-| headers          | yah         | 
-| paragraph        | yah         | 
-| lists            | yah         | 
-| bold             | yah         |
-| italic           | yah         |
-| links            | yah         |
-| blockquotes      | yah         |
-| code             | yah         |
-| images           | yah         |
-| horizontal rules | yah         |
-| escaping         | yah         |
+| headers          | nah         | 
+| paragraph        | nah         | 
+| lists            | nah         | 
+| bold             | nah         |
+| italic           | nah         |
+| links            | nah         |
+| blockquotes      | nah         |
+| code             | nah         |
+| images           | nah         |
+| horizontal rules | nah         |
+| escaping         | nah         |
