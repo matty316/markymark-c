@@ -1,2 +1,3 @@
-CMakeFiles/markymark.dir/src/main.c.o: /home/matty/marky-mark/src/main.c \
- /usr/include/stdc-predef.h /home/matty/marky-mark/include/markymark.h
+CMakeFiles/markymark.dir/src/main.c.o: \
+  /Users/matty/projects/markymark-c/src/main.c \
+  /Users/matty/projects/markymark-c/include/markymark.h

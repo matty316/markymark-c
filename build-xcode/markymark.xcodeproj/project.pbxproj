@@ -9,7 +9,7 @@
 /* Begin PBXAggregateTarget section */
 		96C747C26BF333E445E1962F /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = CCDDA641D4E7458F85A9D06D /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = E1C4A4BC79CD4750A8A6C6CA /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
 				4646F1DE2CF2F01DF3EA254E /* Generate CMakeFiles/ZERO_CHECK */,
 			);
@@ -20,13 +20,13 @@
 		};
 		EF93432C9FE4F46FAEFD4D18 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 3D5AF480B96C4B4FA9FEDC8C /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = 2F6B169C99F343538CCF5742 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
 				7536B1B17EE161279CAB740E /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				4A50CFC97EFF4C86BAF704E5 /* PBXTargetDependency */,
-				889F1C2CB34746AFB0B8B7F8 /* PBXTargetDependency */,
+				A443047E806D4C8F85FAD45C /* PBXTargetDependency */,
+				45E2A2122F374E70A2CB7869 /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -34,66 +34,68 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1BC6EEC2E5B343CA9152F5A2 /* /Users/matty/projects/markymark-c/src/markymark.c */ = {isa = PBXBuildFile; fileRef = BB51C9F6D5EC439FA3B00BA4 /* /Users/matty/projects/markymark-c/src/markymark.c */; };
-		254583DC0FE848D6B78C1499 /* /Users/matty/projects/markymark-c/include/markup.h */ = {isa = PBXBuildFile; fileRef = 068CEE9795EA489AA78736FF /* /Users/matty/projects/markymark-c/include/markup.h */; };
-		74729A8144C94381BB21DFFE /* /Users/matty/projects/markymark-c/src/markup.c */ = {isa = PBXBuildFile; fileRef = C9AD46EE14584E2AA5FF305E /* /Users/matty/projects/markymark-c/src/markup.c */; };
-		9E9D196B43854D08880F5569 /* /Users/matty/projects/markymark-c/src/scanner.c */ = {isa = PBXBuildFile; fileRef = E6D7CBE4D27F4474993BD89A /* /Users/matty/projects/markymark-c/src/scanner.c */; };
-		AAA61A5B8A5E48168F77C27C /* /Users/matty/projects/markymark-c/src/main.c */ = {isa = PBXBuildFile; fileRef = 51CEAD6CD431433E83FF494D /* /Users/matty/projects/markymark-c/src/main.c */; };
-		BA54A68902C44C2D91A727FF /* /Users/matty/projects/markymark-c/include/scanner.h */ = {isa = PBXBuildFile; fileRef = 4AC4B70176B442DC88ED2664 /* /Users/matty/projects/markymark-c/include/scanner.h */; };
-		C28BE2FEE2954CE6A2CFEA91 /* /Users/matty/projects/markymark-c/include/markymark.h */ = {isa = PBXBuildFile; fileRef = C9614BDA03364DAEA49B8524 /* /Users/matty/projects/markymark-c/include/markymark.h */; };
-		CC57AF809EF242F7A5C86645 /* /Users/matty/projects/markymark-c/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = E63900E144844DECAFF4A7DA /* /Users/matty/projects/markymark-c/CMakeLists.txt */; };
-		E570C46DBFB344E28F74AD14 /* /Users/matty/projects/markymark-c/include/token.h */ = {isa = PBXBuildFile; fileRef = 7F72C42E5D604433993BED3A /* /Users/matty/projects/markymark-c/include/token.h */; };
+		05A44BDC4D964825A854AA2C /* /Users/matty/projects/markymark-c/src/scanner.c */ = {isa = PBXBuildFile; fileRef = 16B4B90BBF754B5BAA19D35E /* /Users/matty/projects/markymark-c/src/scanner.c */; };
+		0E35A5F920494ECFBE8A14F1 /* /Users/matty/projects/markymark-c/include/markup.h */ = {isa = PBXBuildFile; fileRef = E6E931D1961C4E448C96CBB1 /* /Users/matty/projects/markymark-c/include/markup.h */; };
+		164F9C5E4D984D968191ADBA /* /Users/matty/projects/markymark-c/include/markymark.h */ = {isa = PBXBuildFile; fileRef = CADA25DC325A458C8CDDBEDE /* /Users/matty/projects/markymark-c/include/markymark.h */; };
+		18D6679E28CC456CBF93AA15 /* /Users/matty/projects/markymark-c/src/markymark.c */ = {isa = PBXBuildFile; fileRef = 6109CED4C26D4495AFF4A3E8 /* /Users/matty/projects/markymark-c/src/markymark.c */; };
+		2F056037502441B494FA7414 /* /Users/matty/projects/markymark-c/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 0A2FA0D6F88C4F51A0984D83 /* /Users/matty/projects/markymark-c/CMakeLists.txt */; };
+		69026B5D267D4A3C99D00716 /* /Users/matty/projects/markymark-c/include/token.h */ = {isa = PBXBuildFile; fileRef = EBDF630A38BF4798B8C799DD /* /Users/matty/projects/markymark-c/include/token.h */; };
+		74684F8A576A4946830AACB1 /* /Users/matty/projects/markymark-c/src/parser.c */ = {isa = PBXBuildFile; fileRef = 395D2D20F8E0474088965043 /* /Users/matty/projects/markymark-c/src/parser.c */; };
+		9CF70B5D23174A3EAF79756A /* /Users/matty/projects/markymark-c/src/markup.c */ = {isa = PBXBuildFile; fileRef = 966AB425265C4E35A46AB641 /* /Users/matty/projects/markymark-c/src/markup.c */; };
+		B36BC7D2BE7546058A60AE22 /* /Users/matty/projects/markymark-c/src/main.c */ = {isa = PBXBuildFile; fileRef = CD55D5B04D36431AA1A90778 /* /Users/matty/projects/markymark-c/src/main.c */; };
+		E1FCB969A96042038496F404 /* /Users/matty/projects/markymark-c/include/scanner.h */ = {isa = PBXBuildFile; fileRef = A5B715F2A0E64CD8BD25A8DE /* /Users/matty/projects/markymark-c/include/scanner.h */; };
+		E4FE344168364A21961B2CD0 /* /Users/matty/projects/markymark-c/include/parser.h */ = {isa = PBXBuildFile; fileRef = 18FE2790436A4E8DB10267BE /* /Users/matty/projects/markymark-c/include/parser.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		02059E8D368943F0A46AE9D2 /* MinSizeRel */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = MinSizeRel;
-		};
-		1FB3F70914BE4763A8DCDEC0 /* Release */ = {
+		0DF07CA362CA471B9FF2778D /* Release */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Release;
 		};
-		C3F29F1752BE46C88FBB970F /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Debug;
-		};
-		D966E0068BDA47EE9BA0F2D0 /* RelWithDebInfo */ = {
+		20BA19971F4A467F9FCF490C /* RelWithDebInfo */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = RelWithDebInfo;
 		};
+		459D4F543A314C9694F7777F /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		FC5B846F304F48AA928A5693 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		69CF9C2C3B184BECA716820B /* PBXContainerItemProxy */ = {
+		B7F5A4F77E5646919567CF58 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D9003BE672DB4BB4A1D9D4E7 /* Project object */;
+			containerPortal = BFD2960D0AD64B95B1602B8F /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DEAF0B2DC53C6B1633F66416;
 			remoteInfo = markymark;
 		};
-		AEDEC45B61C845DBB10806A0 /* PBXContainerItemProxy */ = {
+		E754D4F1658F445FBD32F3BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D9003BE672DB4BB4A1D9D4E7 /* Project object */;
+			containerPortal = BFD2960D0AD64B95B1602B8F /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 96C747C26BF333E445E1962F;
 			remoteInfo = ZERO_CHECK;
 		};
-		D24B768AB3264FEC8607E6A0 /* PBXContainerItemProxy */ = {
+		E76E252874814E659673BBC0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D9003BE672DB4BB4A1D9D4E7 /* Project object */;
+			containerPortal = BFD2960D0AD64B95B1602B8F /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 96C747C26BF333E445E1962F;
 			remoteInfo = ZERO_CHECK;
@@ -101,21 +103,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		068CEE9795EA489AA78736FF /* /Users/matty/projects/markymark-c/include/markup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = markup.h; path = include/markup.h; sourceTree = SOURCE_ROOT; };
-		2D90A85353C14ECE92116F92 /* markymark */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = markymark; sourceTree = BUILT_PRODUCTS_DIR; };
-		4AC4B70176B442DC88ED2664 /* /Users/matty/projects/markymark-c/include/scanner.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = scanner.h; path = include/scanner.h; sourceTree = SOURCE_ROOT; };
-		51CEAD6CD431433E83FF494D /* /Users/matty/projects/markymark-c/src/main.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = main.c; path = src/main.c; sourceTree = SOURCE_ROOT; };
-		7F72C42E5D604433993BED3A /* /Users/matty/projects/markymark-c/include/token.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = token.h; path = include/token.h; sourceTree = SOURCE_ROOT; };
-		BB51C9F6D5EC439FA3B00BA4 /* /Users/matty/projects/markymark-c/src/markymark.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = markymark.c; path = src/markymark.c; sourceTree = SOURCE_ROOT; };
-		C9614BDA03364DAEA49B8524 /* /Users/matty/projects/markymark-c/include/markymark.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = markymark.h; path = include/markymark.h; sourceTree = SOURCE_ROOT; };
-		C9AD46EE14584E2AA5FF305E /* /Users/matty/projects/markymark-c/src/markup.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = markup.c; path = src/markup.c; sourceTree = SOURCE_ROOT; };
-		DD35E6B5E2404295AED81C40 /* /Users/matty/projects/markymark-c/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		E63900E144844DECAFF4A7DA /* /Users/matty/projects/markymark-c/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		E6D7CBE4D27F4474993BD89A /* /Users/matty/projects/markymark-c/src/scanner.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = scanner.c; path = src/scanner.c; sourceTree = SOURCE_ROOT; };
+		0A2FA0D6F88C4F51A0984D83 /* /Users/matty/projects/markymark-c/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		16B4B90BBF754B5BAA19D35E /* /Users/matty/projects/markymark-c/src/scanner.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = scanner.c; path = src/scanner.c; sourceTree = SOURCE_ROOT; };
+		18FE2790436A4E8DB10267BE /* /Users/matty/projects/markymark-c/include/parser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = parser.h; path = include/parser.h; sourceTree = SOURCE_ROOT; };
+		395D2D20F8E0474088965043 /* /Users/matty/projects/markymark-c/src/parser.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = parser.c; path = src/parser.c; sourceTree = SOURCE_ROOT; };
+		4A57DAD1C9C743D194435628 /* markymark */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = markymark; sourceTree = BUILT_PRODUCTS_DIR; };
+		6109CED4C26D4495AFF4A3E8 /* /Users/matty/projects/markymark-c/src/markymark.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = markymark.c; path = src/markymark.c; sourceTree = SOURCE_ROOT; };
+		8E88F216B9564A1A821B9C69 /* /Users/matty/projects/markymark-c/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		966AB425265C4E35A46AB641 /* /Users/matty/projects/markymark-c/src/markup.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = markup.c; path = src/markup.c; sourceTree = SOURCE_ROOT; };
+		A5B715F2A0E64CD8BD25A8DE /* /Users/matty/projects/markymark-c/include/scanner.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = scanner.h; path = include/scanner.h; sourceTree = SOURCE_ROOT; };
+		CADA25DC325A458C8CDDBEDE /* /Users/matty/projects/markymark-c/include/markymark.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = markymark.h; path = include/markymark.h; sourceTree = SOURCE_ROOT; };
+		CD55D5B04D36431AA1A90778 /* /Users/matty/projects/markymark-c/src/main.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = main.c; path = src/main.c; sourceTree = SOURCE_ROOT; };
+		E6E931D1961C4E448C96CBB1 /* /Users/matty/projects/markymark-c/include/markup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = markup.h; path = include/markup.h; sourceTree = SOURCE_ROOT; };
+		EBDF630A38BF4798B8C799DD /* /Users/matty/projects/markymark-c/include/token.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = token.h; path = include/token.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D8E44934B5464948B35DB1B9 /* Frameworks */ = {
+		91062184C24D45ECB3EB57AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,85 +129,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		179E6D0183954EBE932ABA4F /* CMake Rules */ = {
+		163CE8BD6E6C482A80613583 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD55D5B04D36431AA1A90778 /* /Users/matty/projects/markymark-c/src/main.c */,
+				966AB425265C4E35A46AB641 /* /Users/matty/projects/markymark-c/src/markup.c */,
+				6109CED4C26D4495AFF4A3E8 /* /Users/matty/projects/markymark-c/src/markymark.c */,
+				395D2D20F8E0474088965043 /* /Users/matty/projects/markymark-c/src/parser.c */,
+				16B4B90BBF754B5BAA19D35E /* /Users/matty/projects/markymark-c/src/scanner.c */,
 			);
-			name = "CMake Rules";
+			name = "Source Files";
 			sourceTree = "<group>";
 		};
-		4A0105E701A34745B524F049 /* Frameworks */ = {
+		4BFA367850ED41AE848F5A51 = {
+			isa = PBXGroup;
+			children = (
+				AE4594A915B44FD098045B53 /* markymark */,
+				6D37D9B357044D39A2DD9DE4 /* ALL_BUILD */,
+				53C01F0CED3744508E2358B4 /* Products */,
+				B4D077F9F0BC4F67B43D26EC /* Frameworks */,
+				D52657C31C9A40BDA9881CC3 /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		53C01F0CED3744508E2358B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A57DAD1C9C743D194435628 /* markymark */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D37D9B357044D39A2DD9DE4 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				B9BFEEDB1F214696B3D64CC7 /* CMake Rules */,
+				8E88F216B9564A1A821B9C69 /* /Users/matty/projects/markymark-c/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		9975081470B74A5DB06D52BC /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6E931D1961C4E448C96CBB1 /* /Users/matty/projects/markymark-c/include/markup.h */,
+				CADA25DC325A458C8CDDBEDE /* /Users/matty/projects/markymark-c/include/markymark.h */,
+				18FE2790436A4E8DB10267BE /* /Users/matty/projects/markymark-c/include/parser.h */,
+				A5B715F2A0E64CD8BD25A8DE /* /Users/matty/projects/markymark-c/include/scanner.h */,
+				EBDF630A38BF4798B8C799DD /* /Users/matty/projects/markymark-c/include/token.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		AE4594A915B44FD098045B53 /* markymark */ = {
+			isa = PBXGroup;
+			children = (
+				163CE8BD6E6C482A80613583 /* Source Files */,
+				9975081470B74A5DB06D52BC /* Header Files */,
+				0A2FA0D6F88C4F51A0984D83 /* /Users/matty/projects/markymark-c/CMakeLists.txt */,
+			);
+			name = markymark;
+			sourceTree = "<group>";
+		};
+		B4D077F9F0BC4F67B43D26EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4E54E10F1AE1440DB88D692B /* Source Files */ = {
+		B9BFEEDB1F214696B3D64CC7 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
-				51CEAD6CD431433E83FF494D /* /Users/matty/projects/markymark-c/src/main.c */,
-				C9AD46EE14584E2AA5FF305E /* /Users/matty/projects/markymark-c/src/markup.c */,
-				BB51C9F6D5EC439FA3B00BA4 /* /Users/matty/projects/markymark-c/src/markymark.c */,
-				E6D7CBE4D27F4474993BD89A /* /Users/matty/projects/markymark-c/src/scanner.c */,
 			);
-			name = "Source Files";
+			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		52FBC052BA744BDC9EFE8327 /* Header Files */ = {
-			isa = PBXGroup;
-			children = (
-				068CEE9795EA489AA78736FF /* /Users/matty/projects/markymark-c/include/markup.h */,
-				C9614BDA03364DAEA49B8524 /* /Users/matty/projects/markymark-c/include/markymark.h */,
-				4AC4B70176B442DC88ED2664 /* /Users/matty/projects/markymark-c/include/scanner.h */,
-				7F72C42E5D604433993BED3A /* /Users/matty/projects/markymark-c/include/token.h */,
-			);
-			name = "Header Files";
-			sourceTree = "<group>";
-		};
-		5EBDB58E56E143139E78D2FD /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				179E6D0183954EBE932ABA4F /* CMake Rules */,
-				DD35E6B5E2404295AED81C40 /* /Users/matty/projects/markymark-c/CMakeLists.txt */,
-			);
-			name = ALL_BUILD;
-			sourceTree = "<group>";
-		};
-		A8B3572E08E940ECB1FC542D /* Resources */ = {
+		D52657C31C9A40BDA9881CC3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		BA072341167B4FF99E82A530 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2D90A85353C14ECE92116F92 /* markymark */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F146FBAA810E4145BC4CAE31 /* markymark */ = {
-			isa = PBXGroup;
-			children = (
-				4E54E10F1AE1440DB88D692B /* Source Files */,
-				52FBC052BA744BDC9EFE8327 /* Header Files */,
-				E63900E144844DECAFF4A7DA /* /Users/matty/projects/markymark-c/CMakeLists.txt */,
-			);
-			name = markymark;
-			sourceTree = "<group>";
-		};
-		F3DD0ADC67FF42578F69A670 = {
-			isa = PBXGroup;
-			children = (
-				F146FBAA810E4145BC4CAE31 /* markymark */,
-				5EBDB58E56E143139E78D2FD /* ALL_BUILD */,
-				BA072341167B4FF99E82A530 /* Products */,
-				4A0105E701A34745B524F049 /* Frameworks */,
-				A8B3572E08E940ECB1FC542D /* Resources */,
-			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,42 +217,42 @@
 /* Begin PBXNativeTarget section */
 		DEAF0B2DC53C6B1633F66416 /* markymark */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF6C132F54424178AA942D89 /* Build configuration list for PBXNativeTarget "markymark" */;
+			buildConfigurationList = 3FACF89660E84825B73EE34E /* Build configuration list for PBXNativeTarget "markymark" */;
 			buildPhases = (
-				35F730FE286E4A029CC181CA /* Sources */,
-				D8E44934B5464948B35DB1B9 /* Frameworks */,
+				CDFCB16AAB80449381220D91 /* Sources */,
+				91062184C24D45ECB3EB57AE /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C0081270E5B547CC9A12E15D /* PBXTargetDependency */,
+				C5DF7BBFC87C4558956BADFF /* PBXTargetDependency */,
 			);
 			name = markymark;
 			productName = markymark;
-			productReference = 2D90A85353C14ECE92116F92 /* markymark */;
+			productReference = 4A57DAD1C9C743D194435628 /* markymark */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D9003BE672DB4BB4A1D9D4E7 /* Project object */ = {
+		BFD2960D0AD64B95B1602B8F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 2600;
 			};
-			buildConfigurationList = FA6AE506B9B64175B80304F9 /* Build configuration list for PBXProject "markymark" */;
+			buildConfigurationList = 3404A88BA5854FE795628075 /* Build configuration list for PBXProject "markymark" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				C3F29F1752BE46C88FBB970F /* Debug */,
-				1FB3F70914BE4763A8DCDEC0 /* Release */,
-				02059E8D368943F0A46AE9D2 /* MinSizeRel */,
-				D966E0068BDA47EE9BA0F2D0 /* RelWithDebInfo */,
+				FC5B846F304F48AA928A5693 /* Debug */,
+				0DF07CA362CA471B9FF2778D /* Release */,
+				459D4F543A314C9694F7777F /* MinSizeRel */,
+				20BA19971F4A467F9FCF490C /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = F3DD0ADC67FF42578F69A670;
+			mainGroup = 4BFA367850ED41AE848F5A51;
 			projectDirPath = "/Users/matty/projects/markymark-c";
 			projectRoot = "";
 			targets = (
@@ -357,256 +363,40 @@ exit 0";
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		35F730FE286E4A029CC181CA /* Sources */ = {
+		CDFCB16AAB80449381220D91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAA61A5B8A5E48168F77C27C /* /Users/matty/projects/markymark-c/src/main.c */,
-				74729A8144C94381BB21DFFE /* /Users/matty/projects/markymark-c/src/markup.c */,
-				1BC6EEC2E5B343CA9152F5A2 /* /Users/matty/projects/markymark-c/src/markymark.c */,
-				9E9D196B43854D08880F5569 /* /Users/matty/projects/markymark-c/src/scanner.c */,
+				B36BC7D2BE7546058A60AE22 /* /Users/matty/projects/markymark-c/src/main.c */,
+				9CF70B5D23174A3EAF79756A /* /Users/matty/projects/markymark-c/src/markup.c */,
+				18D6679E28CC456CBF93AA15 /* /Users/matty/projects/markymark-c/src/markymark.c */,
+				74684F8A576A4946830AACB1 /* /Users/matty/projects/markymark-c/src/parser.c */,
+				05A44BDC4D964825A854AA2C /* /Users/matty/projects/markymark-c/src/scanner.c */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4A50CFC97EFF4C86BAF704E5 /* PBXTargetDependency */ = {
+		45E2A2122F374E70A2CB7869 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DEAF0B2DC53C6B1633F66416 /* markymark */;
-			targetProxy = 69CF9C2C3B184BECA716820B /* PBXContainerItemProxy */;
+			targetProxy = B7F5A4F77E5646919567CF58 /* PBXContainerItemProxy */;
 		};
-		889F1C2CB34746AFB0B8B7F8 /* PBXTargetDependency */ = {
+		A443047E806D4C8F85FAD45C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 96C747C26BF333E445E1962F /* ZERO_CHECK */;
-			targetProxy = AEDEC45B61C845DBB10806A0 /* PBXContainerItemProxy */;
+			targetProxy = E76E252874814E659673BBC0 /* PBXContainerItemProxy */;
 		};
-		C0081270E5B547CC9A12E15D /* PBXTargetDependency */ = {
+		C5DF7BBFC87C4558956BADFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 96C747C26BF333E445E1962F /* ZERO_CHECK */;
-			targetProxy = D24B768AB3264FEC8607E6A0 /* PBXContainerItemProxy */;
+			targetProxy = E754D4F1658F445FBD32F3BC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		03941DD660CB43158AA346B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		0E6C6FC88A1D44308B0B3A13 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		2E139E8FC49549C9990DBBED /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		6B2B012B0BE5484B9E74747B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				SDKROOT = "";
-				SYMROOT = "/Users/matty/projects/markymark-c/build-xcode/build";
-			};
-			name = Debug;
-		};
-		7AB61C331FEB4BF389E47697 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "/Users/matty/projects/markymark-c/build-xcode/RelWithDebInfo";
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/matty/projects/markymark-c/include","$(inherited)");
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_CFLAGS = ("       -DNDEBUG '-std=gnu2x' -Wall -Wextra    ","$(inherited)");
-				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = markymark;
-				SECTORDER_FLAGS = "";
-				TARGET_TEMP_DIR = "/Users/matty/projects/markymark-c/build-xcode/build/markymark.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		8BBC799797134BB8A6BBFC7D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		97300B0B666A44E4BCF7C18C /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				SDKROOT = "";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SYMROOT = "/Users/matty/projects/markymark-c/build-xcode/build";
-			};
-			name = MinSizeRel;
-		};
-		A3C26C5F443242758EE0AB69 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		A4D8F6892BBB46808BC2A29C /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "/Users/matty/projects/markymark-c/build-xcode/MinSizeRel";
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/matty/projects/markymark-c/include","$(inherited)");
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu2x' -Wall -Wextra    ","$(inherited)");
-				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = markymark;
-				SECTORDER_FLAGS = "";
-				TARGET_TEMP_DIR = "/Users/matty/projects/markymark-c/build-xcode/build/markymark.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		AE56852CF84E471EAAAC640C /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				SDKROOT = "";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SYMROOT = "/Users/matty/projects/markymark-c/build-xcode/build";
-			};
-			name = RelWithDebInfo;
-		};
-		B180EC81BE8D4C71B5580CEC /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		BB26597694724F4CBB5E3CE9 /* RelWithDebInfo */ = {
+		1DD097F8E5B448B29E6330B0 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -628,45 +418,7 @@ exit 0";
 			};
 			name = RelWithDebInfo;
 		};
-		D3C0C3C7E24540AA972C17CE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "/Users/matty/projects/markymark-c/build-xcode/Debug";
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/matty/projects/markymark-c/include","$(inherited)");
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_CFLAGS = ("   '-std=gnu2x' -Wall -Wextra    ","$(inherited)");
-				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = markymark;
-				SECTORDER_FLAGS = "";
-				TARGET_TEMP_DIR = "/Users/matty/projects/markymark-c/build-xcode/build/markymark.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		D4E476CAB4254AA2923693FE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				SDKROOT = "";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SYMROOT = "/Users/matty/projects/markymark-c/build-xcode/build";
-			};
-			name = Release;
-		};
-		DEE80CACF10F4E0CB230BD5B /* Release */ = {
+		2DFEC7E9775B4480B6861FFD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -694,7 +446,7 @@ exit 0";
 			};
 			name = Release;
 		};
-		E0C74CC95D5D4A4CB7489570 /* Debug */ = {
+		3067E7D9D7CC44A5801693DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -716,54 +468,309 @@ exit 0";
 			};
 			name = Debug;
 		};
+		39B31127D926474398CA4279 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		46D5EDC91D33465B96B07823 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/matty/projects/markymark-c/build-xcode/build";
+			};
+			name = Release;
+		};
+		5359CE91205A4FB09211B353 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/matty/projects/markymark-c/build-xcode/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/matty/projects/markymark-c/include","$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   '-std=gnu2x' -Wall -Wextra    ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = markymark;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/matty/projects/markymark-c/build-xcode/build/markymark.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		5848937F899D40F1BE2A760B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		5DD59A1AB28144E9B8E3BA8D /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/matty/projects/markymark-c/build-xcode/build";
+			};
+			name = MinSizeRel;
+		};
+		6EB96B0F13C5411F92444511 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/matty/projects/markymark-c/build-xcode/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/matty/projects/markymark-c/include","$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG '-std=gnu2x' -Wall -Wextra    ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = markymark;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/matty/projects/markymark-c/build-xcode/build/markymark.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		73EF88A1DC35455DA584CB75 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		78139D070F2D4FF79F5166DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		79446E486C6948F9932F3466 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		82186A083CA04CA7831DF885 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/matty/projects/markymark-c/build-xcode/build";
+			};
+			name = RelWithDebInfo;
+		};
+		986F7B81F95C4B48A626B431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = "";
+				SYMROOT = "/Users/matty/projects/markymark-c/build-xcode/build";
+			};
+			name = Debug;
+		};
+		9DF55EC518484AA09B7E3202 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/matty/projects/markymark-c/build-xcode/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/matty/projects/markymark-c/include","$(inherited)");
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("       -DNDEBUG '-std=gnu2x' -Wall -Wextra    ","$(inherited)");
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = markymark;
+				SECTORDER_FLAGS = "";
+				TARGET_TEMP_DIR = "/Users/matty/projects/markymark-c/build-xcode/build/markymark.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		A28877CEF6144CCDBD6381B9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3D5AF480B96C4B4FA9FEDC8C /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		2F6B169C99F343538CCF5742 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E0C74CC95D5D4A4CB7489570 /* Debug */,
-				03941DD660CB43158AA346B2 /* Release */,
-				B180EC81BE8D4C71B5580CEC /* MinSizeRel */,
-				0E6C6FC88A1D44308B0B3A13 /* RelWithDebInfo */,
+				3067E7D9D7CC44A5801693DD /* Debug */,
+				79446E486C6948F9932F3466 /* Release */,
+				73EF88A1DC35455DA584CB75 /* MinSizeRel */,
+				A28877CEF6144CCDBD6381B9 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		CCDDA641D4E7458F85A9D06D /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		3404A88BA5854FE795628075 /* Build configuration list for PBXProject "markymark" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3C26C5F443242758EE0AB69 /* Debug */,
-				8BBC799797134BB8A6BBFC7D /* Release */,
-				2E139E8FC49549C9990DBBED /* MinSizeRel */,
-				BB26597694724F4CBB5E3CE9 /* RelWithDebInfo */,
+				986F7B81F95C4B48A626B431 /* Debug */,
+				46D5EDC91D33465B96B07823 /* Release */,
+				5DD59A1AB28144E9B8E3BA8D /* MinSizeRel */,
+				82186A083CA04CA7831DF885 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		FA6AE506B9B64175B80304F9 /* Build configuration list for PBXProject "markymark" */ = {
+		3FACF89660E84825B73EE34E /* Build configuration list for PBXNativeTarget "markymark" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6B2B012B0BE5484B9E74747B /* Debug */,
-				D4E476CAB4254AA2923693FE /* Release */,
-				97300B0B666A44E4BCF7C18C /* MinSizeRel */,
-				AE56852CF84E471EAAAC640C /* RelWithDebInfo */,
+				5359CE91205A4FB09211B353 /* Debug */,
+				2DFEC7E9775B4480B6861FFD /* Release */,
+				6EB96B0F13C5411F92444511 /* MinSizeRel */,
+				9DF55EC518484AA09B7E3202 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		FF6C132F54424178AA942D89 /* Build configuration list for PBXNativeTarget "markymark" */ = {
+		E1C4A4BC79CD4750A8A6C6CA /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3C0C3C7E24540AA972C17CE /* Debug */,
-				DEE80CACF10F4E0CB230BD5B /* Release */,
-				A4D8F6892BBB46808BC2A29C /* MinSizeRel */,
-				7AB61C331FEB4BF389E47697 /* RelWithDebInfo */,
+				78139D070F2D4FF79F5166DB /* Debug */,
+				39B31127D926474398CA4279 /* Release */,
+				5848937F899D40F1BE2A760B /* MinSizeRel */,
+				1DD097F8E5B448B29E6330B0 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D9003BE672DB4BB4A1D9D4E7 /* Project object */;
+	rootObject = BFD2960D0AD64B95B1602B8F /* Project object */;
 }

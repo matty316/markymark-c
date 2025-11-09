@@ -6,6 +6,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/matty/projects/markyma
 set(OLD_GLOB
   "/Users/matty/projects/markymark-c/include/markup.h"
   "/Users/matty/projects/markymark-c/include/markymark.h"
+  "/Users/matty/projects/markymark-c/include/parser.h"
   "/Users/matty/projects/markymark-c/include/scanner.h"
   "/Users/matty/projects/markymark-c/include/token.h"
   )
@@ -20,6 +21,7 @@ set(OLD_GLOB
   "/Users/matty/projects/markymark-c/src/main.c"
   "/Users/matty/projects/markymark-c/src/markup.c"
   "/Users/matty/projects/markymark-c/src/markymark.c"
+  "/Users/matty/projects/markymark-c/src/parser.c"
   "/Users/matty/projects/markymark-c/src/scanner.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
