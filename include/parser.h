@@ -3,8 +3,11 @@
 
 #include "token.h"
 
+void init_parser();
+void free_parser();
 void advance_parser();
 void parse_element();
-void consume(TokenType type, const char* message);
+void consume(TokenType type, const char *message);
+void print_markup();
 
 #endif

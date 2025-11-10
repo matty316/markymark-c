@@ -1,19 +1,27 @@
 #ifndef markup_h
 #define markup_h
 
+#include <stddef.h>
 typedef enum ElementType {
   LINE,
 } ElementType;
 
 typedef enum LineType {
-  H1, H2, H3, H4, H5, H6
+  LINE_H1,
+  LINE_H2,
+  LINE_H3,
+  LINE_H4,
+  LINE_H5,
+  LINE_H6,
+  LINE_P
 } LineType;
 
 typedef struct Element {
   ElementType type;
-  union{
+  union {
     struct Line {
-      const char* content;
+      const char *start;
+      size_t length;
       LineType type;
     } line;
   } data;
@@ -21,10 +29,14 @@ typedef struct Element {
 
 typedef struct Markup {
   struct Element *elements;
-  int numOfElements;
+  size_t numOfElements;
+  size_t capacity;
 } Markup;
 
+void init_markup(Markup *markup);
 const char *html_from_markup(const Markup *markup);
 const char *html_from_element(const Element *element);
+void add_line(Markup *markup, LineType type, const char *content, int length);
+void free_markup(Markup *markup);
 
 #endif

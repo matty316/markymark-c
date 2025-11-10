@@ -1,20 +1,12 @@
 #include "markymark.h"
 
 int main() {
-  parse("*=-_.+`\n[]\r\n()<>!\n"
-        "# ## ### #### ##### ###### \n"
-        "- -- --- \n"
-        "* ** *** \n"
-        "_ __ ___ \n"
-        "` `` \n"
-        "```\n"
-        "func test() {\n"
-        "    print(\"hell nah\")\n"
-        "}\n"
-        "``` \n"
-        "word 2 23\n"
-        "2. this is a list\n"
-        "23 this is not\n"
-        "####### not a heading\n");
+  parse("# this is a heading\n"
+        "## this is a heading 2\n"
+        "### this is a heading 3\n"
+        "#### this is a heading 4\n"
+        "##### this is a heading 5\n"
+        "###### this is a heading 6\n"
+        "####### this is not a heading\n");
   return 0;
 }

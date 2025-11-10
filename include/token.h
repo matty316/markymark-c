@@ -1,6 +1,7 @@
 #ifndef token_h
 #define token_h
 
+#include <stddef.h>
 #include <stdint.h>
 typedef enum TokenType {
   TOKEN_HASH,
@@ -44,7 +45,7 @@ typedef enum TokenType {
 
 typedef struct Token {
   const char *start;
-  uint32_t length;
+  size_t length;
   int line;
   TokenType type;
 } Token;

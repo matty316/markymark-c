@@ -2,6 +2,7 @@
 #include "token.h"
 
 #include <stdbool.h>
+#include <stddef.h>
 #include <stdint.h>
 #include <string.h>
 
@@ -23,7 +24,7 @@ static Token make_token(TokenType type) {
   Token token;
   token.type = type;
   token.start = scanner.start;
-  token.length = (uint32_t)(scanner.position - scanner.start);
+  token.length = (size_t)(scanner.position - scanner.start);
   token.line = scanner.line;
   return token;
 }
@@ -32,7 +33,7 @@ static Token error_token(const char *message) {
   Token token;
   token.type = TOKEN_ERROR;
   token.start = message;
-  token.length = (uint32_t)strlen(message);
+  token.length = (size_t)strlen(message);
   token.line = scanner.line;
   return token;
 }

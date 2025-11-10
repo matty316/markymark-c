@@ -4,6 +4,7 @@
 #include "token.h"
 
 #include <stdbool.h>
+#include <stddef.h>
 #include <stdio.h>
 
 struct Parser {
@@ -14,6 +15,29 @@ struct Parser {
 
 Markup markup;
 
+bool match(TokenType *types, int count) {
+  for (int i = 0; i < count; i++) {
+    if (types[i] == parser.current.type) {
+      advance_parser();
+      return true;
+    }
+  }
+  return false;
+}
+
+void init_parser() {
+  init_markup(&markup);
+  advance_parser();
+  while (!match((TokenType[]){TOKEN_EOF}, 1)) {
+    while (match((TokenType[]){TOKEN_LINE_ENDING}, 1)) {
+      advance_parser();
+    }
+    parse_element();
+  }
+}
+
+void free_parser() { free_markup(&markup); }
+
 void error_at(Token *token, const char *message) {
   fprintf(stderr, "[line %d] Error", token->line);
 
@@ -22,7 +46,7 @@ void error_at(Token *token, const char *message) {
   else if (token->type == TOKEN_ERROR)
     ;
   else
-    fprintf(stderr, " at '%.*s'", token->length, token->start);
+    fprintf(stderr, " at '%.*s'", (int)token->length, token->start);
 
   fprintf(stderr, ": %s\n", message);
   parser.hadError = true;
@@ -35,13 +59,12 @@ void error_at_current(const char *message) {
 }
 
 void advance_parser() {
-  parser.current = parser.previous;
+  parser.previous = parser.current;
 
   while (true) {
     parser.current = scan_token();
 
-    if (parser.current.type != TOKEN_ERROR ||
-        parser.current.type == TOKEN_LINE_ENDING)
+    if (parser.current.type != TOKEN_ERROR)
       break;
 
     error_at_current(parser.current.start);
@@ -57,21 +80,70 @@ void consume(TokenType type, const char *message) {
   error_at_current(message);
 }
 
-bool match(TokenType *types, int count) {
-  for (int i = 0; i < count; i++) {
-    if (types[i] == parser.current.type) {
-      advance_parser();
-      return true;
-    }
-  }
-  return false;
+void expect(TokenType *types, int count) {
+  if (match(types, count))
+    return;
+
+  error_at_current("expected token not found");
 }
 
-void parse_blank() {}
+void parse_blank() {
+  while (match((TokenType[]){TOKEN_LINE_ENDING}, 1)) {
+    advance_parser();
+  }
+}
+
+void parse_paragraph() {
+  const char *textStart = parser.current.start;
+  size_t length = parser.current.length;
+  advance_parser();
+  expect((TokenType[]){TOKEN_LINE_ENDING, TOKEN_EOF}, 2);
+  add_line(&markup, LINE_P, textStart, length);
+}
+
+void parse_heading() {
+  TokenType type = parser.previous.type;
+  const char *textStart = parser.current.start;
+  size_t length = parser.current.length;
+  advance_parser();
+  expect((TokenType[]){TOKEN_LINE_ENDING, TOKEN_EOF}, 2);
+
+  switch (type) {
+  case TOKEN_HASH:
+    add_line(&markup, LINE_H1, textStart, length);
+    break;
+  case TOKEN_HASH2:
+    add_line(&markup, LINE_H2, textStart, length);
+    break;
+  case TOKEN_HASH3:
+    add_line(&markup, LINE_H3, textStart, length);
+    break;
+  case TOKEN_HASH4:
+    add_line(&markup, LINE_H4, textStart, length);
+    break;
+  case TOKEN_HASH5:
+    add_line(&markup, LINE_H5, textStart, length);
+    break;
+  case TOKEN_HASH6:
+    add_line(&markup, LINE_H6, textStart, length);
+    break;
+  default:
+    parse_paragraph();
+    break;
+  }
+}
 
 void parse_line() {
   if (match((TokenType[]){TOKEN_LINE_ENDING}, 1))
     parse_blank();
+  else if (match((TokenType[]){TOKEN_HASH, TOKEN_HASH2, TOKEN_HASH3,
+                               TOKEN_HASH4, TOKEN_HASH5, TOKEN_HASH6},
+                 6))
+    parse_heading();
+  else
+    parse_paragraph();
 }
 
 void parse_element() { parse_line(); }
+
+void print_markup() { html_from_markup(&markup); }

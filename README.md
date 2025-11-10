@@ -4,8 +4,8 @@ a not very fully featured markdown parser written in ~~swift~~ c
 
 | element          | implemented | 
 | ---------------- | ----------- | 
-| headers          | nah         | 
-| paragraph        | nah         | 
+| headers          | yah         | 
+| paragraph        | yah         | 
 | lists            | nah         | 
 | bold             | nah         |
 | italic           | nah         |
