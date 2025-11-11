@@ -4,6 +4,7 @@
 #include <stddef.h>
 typedef enum ElementType {
   LINE,
+  LIST,
 } ElementType;
 
 typedef enum LineType {
@@ -13,7 +14,7 @@ typedef enum LineType {
   LINE_H4,
   LINE_H5,
   LINE_H6,
-  LINE_P
+  LINE_P,
 } LineType;
 
 typedef struct Element {

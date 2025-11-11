@@ -144,6 +144,13 @@ void parse_line() {
     parse_paragraph();
 }
 
-void parse_element() { parse_line(); }
+void parse_unordered_list() {}
+
+void parse_element() {
+  if (match((TokenType[]){TOKEN_STAR, TOKEN_PLUS, TOKEN_MINUS}, 3))
+    parse_unordered_list();
+  else
+    parse_line();
+}
 
 void print_markup() { html_from_markup(&markup); }
