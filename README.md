@@ -6,7 +6,7 @@ a not very fully featured markdown parser written in ~~swift~~ c
 | ---------------- | ----------- | 
 | headers          | yah         | 
 | paragraph        | yah         | 
-| lists            | nah         | 
+| lists            | yah         | 
 | bold             | nah         |
 | italic           | nah         |
 | links            | nah         |

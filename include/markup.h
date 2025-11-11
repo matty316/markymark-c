@@ -4,7 +4,12 @@
 #include <stddef.h>
 typedef enum ElementType {
   LINE,
-  LIST,
+  BLANK,
+  ULIST_START,
+  ULIST_END,
+  OLIST_START,
+  OLIST_END,
+  LIST_ITEM,
 } ElementType;
 
 typedef enum LineType {
@@ -25,6 +30,10 @@ typedef struct Element {
       size_t length;
       LineType type;
     } line;
+    struct ListItem {
+      const char *start;
+      size_t length;
+    } listItem;
   } data;
 } Element;
 
@@ -37,7 +46,11 @@ typedef struct Markup {
 void init_markup(Markup *markup);
 const char *html_from_markup(const Markup *markup);
 const char *html_from_element(const Element *element);
-void add_line(Markup *markup, LineType type, const char *content, size_t length);
+void add_line(Markup *markup, LineType type, const char *start, size_t length);
+void add_blank(Markup *markup);
+void add_list(Markup *markup, bool ordered);
+void add_list_item(Markup *markup, const char* start, size_t length);
+void end_list(Markup *markup, bool ordered);
 void free_markup(Markup *markup);
 
 #endif

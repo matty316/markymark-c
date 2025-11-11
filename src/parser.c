@@ -29,9 +29,6 @@ void init_parser() {
   init_markup(&markup);
   advance_parser();
   while (!match((TokenType[]){TOKEN_EOF}, 1)) {
-    while (match((TokenType[]){TOKEN_LINE_ENDING}, 1)) {
-      advance_parser();
-    }
     parse_element();
   }
 }
@@ -88,9 +85,7 @@ void expect(TokenType *types, int count) {
 }
 
 void parse_blank() {
-  while (match((TokenType[]){TOKEN_LINE_ENDING}, 1)) {
-    advance_parser();
-  }
+  add_blank(&markup);
 }
 
 void parse_paragraph() {
@@ -144,11 +139,40 @@ void parse_line() {
     parse_paragraph();
 }
 
-void parse_unordered_list() {}
+void parse_unordered_list() {
+  add_list(&markup, false);
+  
+  while (true) {
+    const char* start = parser.current.start;
+    size_t length = parser.current.length;
+    advance_parser();
+    add_list_item(&markup, start, length);
+    expect((TokenType[]){TOKEN_LINE_ENDING, TOKEN_EOF}, 2);
+    if (!match((TokenType[]){TOKEN_PLUS, TOKEN_STAR, TOKEN_MINUS}, 3)) break;
+  }
+  
+  end_list(&markup, false);
+}
+
+void parse_ordered_list() {
+  add_list(&markup, true);
+  
+  while (true) {
+    const char* start = parser.current.start;
+    size_t length = parser.current.length;
+    advance_parser();
+    add_list_item(&markup, start, length);
+    expect((TokenType[]){TOKEN_LINE_ENDING, TOKEN_EOF}, 2);
+    if (!match((TokenType[]){TOKEN_NUM}, 3)) break;
+  }
+  
+  end_list(&markup, true);
+}
 
 void parse_element() {
   if (match((TokenType[]){TOKEN_STAR, TOKEN_PLUS, TOKEN_MINUS}, 3))
     parse_unordered_list();
+  if (match((TokenType[]){TOKEN_NUM}, 1)) parse_ordered_list();
   else
     parse_line();
 }
