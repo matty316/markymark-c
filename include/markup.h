@@ -37,7 +37,7 @@ typedef struct Markup {
 void init_markup(Markup *markup);
 const char *html_from_markup(const Markup *markup);
 const char *html_from_element(const Element *element);
-void add_line(Markup *markup, LineType type, const char *content, int length);
+void add_line(Markup *markup, LineType type, const char *content, size_t length);
 void free_markup(Markup *markup);
 
 #endif

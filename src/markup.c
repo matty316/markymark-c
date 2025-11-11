@@ -78,7 +78,7 @@ const char *html_from_markup(const struct Markup *markup) {
   return html;
 }
 
-void add_line(Markup *markup, LineType type, const char *content, int length) {
+void add_line(Markup *markup, LineType type, const char *content, size_t length) {
   if (markup->numOfElements >= markup->capacity)
     grow_elements(markup);
 
