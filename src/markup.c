@@ -78,6 +78,21 @@ void html_from_list_item(Element *element) {
   printf("\t<li>%s</li>\n", buffer);
 }
 
+void html_from_img(Element *element) {
+  struct Img img = element->data.img;
+  
+  char altBuffer[img.altLength + 1];
+  char srcBuffer[img.srcLength + 1];
+  
+  strncpy(altBuffer, img.altStart, img.altLength);
+  strncpy(srcBuffer, img.srcStart, img.srcLength);
+  
+  altBuffer[img.altLength] = '\0';
+  srcBuffer[img.srcLength] = '\0';
+  
+  printf("<img src=\"%s\" alt=\"%s\">\n", srcBuffer, altBuffer);
+}
+
 const char *html_from_markup(const struct Markup *markup) {
   char *html = malloc(sizeof(char));
   for (size_t i = 0; i < markup->numOfElements; i++) {
@@ -119,6 +134,9 @@ const char *html_from_markup(const struct Markup *markup) {
         break;
       case HR:
         printf("<hr>\n");
+        break;
+      case IMG:
+        html_from_img(&element);
         break;
     }
   }
@@ -192,4 +210,16 @@ void add_tab(Markup *markup) {
 
 void add_hr(Markup *markup) {
   add_element_type(markup, HR);
+}
+
+void add_img(Markup *markup, const char* altStart, size_t altLength, const char* srcStart, size_t srcLength) {
+  Element element;
+  element.type = IMG;
+  
+  element.data.img.altStart = altStart;
+  element.data.img.altLength = altLength;
+  element.data.img.srcStart = srcStart;
+  element.data.img.srcLength = srcLength;
+  
+  add_element(markup, element);
 }

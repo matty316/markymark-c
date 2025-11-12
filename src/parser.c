@@ -218,6 +218,36 @@ void parse_hr() {
   expect_end();
 }
 
+void parse_img() {
+  if (!match((TokenType[]){TOKEN_LBRACKET}, 1)) {
+    return;
+  }
+  
+  const char* altStart = parser.current.start;
+  size_t i = 0;
+  while (parser.current.start[i] != ']')
+    i++;
+  
+  size_t altLength = i;
+  
+  i++;
+  
+  while (parser.current.start[i] != '(')
+    i++;
+  
+  const char* srcStart = parser.current.start + i + 1;
+  
+  while (parser.current.start[i] != ')')
+    i++;
+  
+  size_t srcLength = i - altLength - 2;
+  
+  add_img(&markup, altStart, altLength, srcStart, srcLength);
+  
+  advance_parser();
+  expect_end();
+}
+
 void parse_element() {
   if (match((TokenType[]){TOKEN_STAR, TOKEN_PLUS, TOKEN_MINUS}, 3))
     parse_unordered_list();
@@ -229,6 +259,8 @@ void parse_element() {
     parse_code_block();
   if (match((TokenType[]){TOKEN_MINUS3, TOKEN_UNDERSCORE3, TOKEN_STAR3}, 3))
     parse_hr();
+  if (match((TokenType[]){TOKEN_BANG}, 1))
+    parse_img();
   else
     parse_line();
 }

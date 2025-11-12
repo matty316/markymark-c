@@ -16,6 +16,7 @@ typedef enum ElementType {
   CODE_BLOCK_END,
   TAB,
   HR,
+  IMG
 } ElementType;
 
 typedef enum LineType {
@@ -41,6 +42,12 @@ typedef struct Element {
       const char *start;
       size_t length;
     } listItem;
+    struct Img {
+      const char *altStart;
+      size_t altLength;
+      const char *srcStart;
+      size_t srcLength;
+    } img;
   } data;
 } Element;
 
@@ -64,6 +71,7 @@ void add_code_block(Markup *markup);
 void end_code_block(Markup *markup);
 void add_tab(Markup *markup);
 void add_hr(Markup *markup);
+void add_img(Markup *markup, const char* altStart, size_t altLength, const char* srcStart, size_t srcLength);
 void free_markup(Markup *markup);
 
 #endif

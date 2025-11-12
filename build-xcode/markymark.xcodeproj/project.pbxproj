@@ -71,6 +71,8 @@
 		18FE2790436A4E8DB10267BE /* parser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = parser.h; path = include/parser.h; sourceTree = SOURCE_ROOT; };
 		395D2D20F8E0474088965043 /* parser.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = parser.c; path = src/parser.c; sourceTree = SOURCE_ROOT; };
 		48A5809E2EC3E6840067C346 /* test.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = test.md; sourceTree = "<group>"; };
+		48A5809F2EC4C54A0067C346 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		48A580A02EC4C54A0067C346 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A57DAD1C9C743D194435628 /* markymark */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = markymark; sourceTree = BUILT_PRODUCTS_DIR; };
 		6109CED4C26D4495AFF4A3E8 /* markymark.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = markymark.c; path = src/markymark.c; sourceTree = SOURCE_ROOT; };
 		8E88F216B9564A1A821B9C69 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
@@ -148,6 +150,8 @@
 		AE4594A915B44FD098045B53 /* markymark */ = {
 			isa = PBXGroup;
 			children = (
+				48A5809F2EC4C54A0067C346 /* index.html */,
+				48A580A02EC4C54A0067C346 /* README.md */,
 				48A5809E2EC3E6840067C346 /* test.md */,
 				163CE8BD6E6C482A80613583 /* Source Files */,
 				9975081470B74A5DB06D52BC /* Header Files */,

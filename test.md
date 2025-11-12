@@ -43,5 +43,9 @@ func concat(string1: String, string2: String) {
 ```
 
 ---
+
 ***
+
 ___
+
+![alt text](https://easydrawingguides.com/wp-content/uploads/2017/04/how-to-draw-goku-featured-image-1200.png)
