@@ -10,7 +10,7 @@ a not very fully featured markdown parser written in ~~swift~~ c
 | bold             | nah         |
 | italic           | nah         |
 | links            | nah         |
-| blockquotes      | nah         |
+| blockquotes      | yah         |
 | code             | nah         |
 | images           | nah         |
 | horizontal rules | nah         |

@@ -39,6 +39,7 @@ typedef enum TokenType {
   TOKEN_BACKSLASH,
   TOKEN_LINE_ENDING,
   TOKEN_WHITESPACE,
+  TOKEN_TAB,
   TOKEN_EOF,
   TOKEN_ERROR
 } TokenType;

@@ -12,6 +12,9 @@ typedef enum ElementType {
   LIST_ITEM,
   BLOCK_QUOTE_START,
   BLOCK_QUOTE_END,
+  CODE_BLOCK_START,
+  CODE_BLOCK_END,
+  TAB,
 } ElementType;
 
 typedef enum LineType {
@@ -22,6 +25,7 @@ typedef enum LineType {
   LINE_H5,
   LINE_H6,
   LINE_P,
+  LINE_TEXT,
 } LineType;
 
 typedef struct Element {
@@ -55,6 +59,9 @@ void add_list_item(Markup *markup, const char* start, size_t length);
 void end_list(Markup *markup, bool ordered);
 void add_block_quote(Markup *markup);
 void end_block_quote(Markup *markup);
+void add_code_block(Markup *markup);
+void end_code_block(Markup *markup);
+void add_tab(Markup *markup);
 void free_markup(Markup *markup);
 
 #endif

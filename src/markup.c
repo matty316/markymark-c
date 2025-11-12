@@ -60,7 +60,9 @@ void html_from_line(const Element *element) {
     case LINE_P:
       printf("<p>%s</p>\n", buffer);
       break;
-
+    case LINE_TEXT:
+      printf("%s\n", buffer);
+      break;
   }
 }
 
@@ -106,6 +108,15 @@ const char *html_from_markup(const struct Markup *markup) {
       case BLOCK_QUOTE_END:
         printf("</blockquote>\n");
         break;
+      case CODE_BLOCK_START:
+        printf("<pre><code>\n");
+        break;
+      case CODE_BLOCK_END:
+        printf("</pre></code>\n");
+        break;
+      case TAB:
+        printf("\t");
+        break;
     }
   }
   return html;
@@ -116,6 +127,13 @@ void add_element(Markup *markup, Element element) {
     grow_elements(markup);
   markup->elements[markup->numOfElements] = element;
   markup->numOfElements++;
+}
+
+void add_element_type(Markup *markup, ElementType type) {
+  Element newElement;
+  newElement.type = type;
+  
+  add_element(markup, newElement);
 }
 
 void add_line(Markup *markup, LineType type, const char *start, size_t length) {
@@ -129,17 +147,11 @@ void add_line(Markup *markup, LineType type, const char *start, size_t length) {
 }
 
 void add_blank(Markup *markup) {
-  Element element;
-  element.type = BLANK;
-  
-  add_element(markup, element);
+  add_element_type(markup, BLANK);
 }
 
 void add_list(Markup *markup, bool ordered) {
-  Element newElement;
-  newElement.type = ordered ? OLIST_START : ULIST_START;
-  
-  add_element(markup, newElement);
+  add_element_type(markup, ordered ? OLIST_START : ULIST_START);
 }
 
 void add_list_item(Markup *markup, const char* start, size_t length) {
@@ -152,22 +164,25 @@ void add_list_item(Markup *markup, const char* start, size_t length) {
 }
 
 void end_list(Markup *markup, bool ordered) {
-  Element newElement;
-  newElement.type = ordered ? OLIST_END : ULIST_END;
-  
-  add_element(markup, newElement);
+  add_element_type(markup, ordered ? OLIST_END : ULIST_END);
 }
 
 void add_block_quote(Markup *markup) {
-  Element element;
-  element.type = BLOCK_QUOTE_START;
-  
-  add_element(markup, element);
+  add_element_type(markup, BLOCK_QUOTE_START);
 }
 
 void end_block_quote(Markup *markup) {
-  Element element;
-  element.type = BLOCK_QUOTE_END;
-  
-  add_element(markup, element);
+  add_element_type(markup, BLOCK_QUOTE_END);
+}
+
+void add_code_block(Markup *markup) {
+  add_element_type(markup, CODE_BLOCK_START);
+}
+
+void end_code_block(Markup *markup) {
+  add_element_type(markup, CODE_BLOCK_END);
+}
+
+void add_tab(Markup *markup) {
+  add_element_type(markup, TAB);
 }
