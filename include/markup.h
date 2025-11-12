@@ -15,6 +15,7 @@ typedef enum ElementType {
   CODE_BLOCK_START,
   CODE_BLOCK_END,
   TAB,
+  HR,
 } ElementType;
 
 typedef enum LineType {
@@ -62,6 +63,7 @@ void end_block_quote(Markup *markup);
 void add_code_block(Markup *markup);
 void end_code_block(Markup *markup);
 void add_tab(Markup *markup);
+void add_hr(Markup *markup);
 void free_markup(Markup *markup);
 
 #endif

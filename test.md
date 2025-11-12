@@ -41,3 +41,7 @@ func concat(string1: String, string2: String) {
   print(string1 + string2)
 }
 ```
+
+---
+***
+___

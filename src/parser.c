@@ -213,6 +213,11 @@ void parse_code_block() {
   end_code_block(&markup);
 }
 
+void parse_hr() {
+  add_hr(&markup);
+  expect_end();
+}
+
 void parse_element() {
   if (match((TokenType[]){TOKEN_STAR, TOKEN_PLUS, TOKEN_MINUS}, 3))
     parse_unordered_list();
@@ -222,6 +227,8 @@ void parse_element() {
     parse_block_quote();
   if (match((TokenType[]){TOKEN_TICK3}, 1))
     parse_code_block();
+  if (match((TokenType[]){TOKEN_MINUS3, TOKEN_UNDERSCORE3, TOKEN_STAR3}, 3))
+    parse_hr();
   else
     parse_line();
 }

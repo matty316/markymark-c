@@ -117,6 +117,9 @@ const char *html_from_markup(const struct Markup *markup) {
       case TAB:
         printf("\t");
         break;
+      case HR:
+        printf("<hr>\n");
+        break;
     }
   }
   return html;
@@ -185,4 +188,8 @@ void end_code_block(Markup *markup) {
 
 void add_tab(Markup *markup) {
   add_element_type(markup, TAB);
+}
+
+void add_hr(Markup *markup) {
+  add_element_type(markup, HR);
 }
