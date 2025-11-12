@@ -44,8 +44,7 @@
         "table" : {
           "ENABLE_PREVIEWS" : "NO",
           "ENABLE_XOJIT_PREVIEWS" : "NO",
-          "ONLY_ACTIVE_ARCH" : "YES",
-          "TOOLCHAINS" : "com.apple.dt.toolchain.Metal.32023 $(inherited)"
+          "ONLY_ACTIVE_ARCH" : "YES"
         }
       }
     }

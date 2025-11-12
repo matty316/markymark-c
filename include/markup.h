@@ -10,6 +10,8 @@ typedef enum ElementType {
   OLIST_START,
   OLIST_END,
   LIST_ITEM,
+  BLOCK_QUOTE_START,
+  BLOCK_QUOTE_END,
 } ElementType;
 
 typedef enum LineType {
@@ -51,6 +53,8 @@ void add_blank(Markup *markup);
 void add_list(Markup *markup, bool ordered);
 void add_list_item(Markup *markup, const char* start, size_t length);
 void end_list(Markup *markup, bool ordered);
+void add_block_quote(Markup *markup);
+void end_block_quote(Markup *markup);
 void free_markup(Markup *markup);
 
 #endif

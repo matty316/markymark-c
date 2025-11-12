@@ -60,6 +60,7 @@ void html_from_line(const Element *element) {
     case LINE_P:
       printf("<p>%s</p>\n", buffer);
       break;
+
   }
 }
 
@@ -99,7 +100,11 @@ const char *html_from_markup(const struct Markup *markup) {
       case LIST_ITEM:
         html_from_list_item(&element);
         break;
-      default:
+      case BLOCK_QUOTE_START:
+        printf("<blockquote>\n");
+        break;
+      case BLOCK_QUOTE_END:
+        printf("</blockquote>\n");
         break;
     }
   }
@@ -151,4 +156,18 @@ void end_list(Markup *markup, bool ordered) {
   newElement.type = ordered ? OLIST_END : ULIST_END;
   
   add_element(markup, newElement);
+}
+
+void add_block_quote(Markup *markup) {
+  Element element;
+  element.type = BLOCK_QUOTE_START;
+  
+  add_element(markup, element);
+}
+
+void end_block_quote(Markup *markup) {
+  Element element;
+  element.type = BLOCK_QUOTE_END;
+  
+  add_element(markup, element);
 }

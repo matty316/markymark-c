@@ -84,6 +84,10 @@ void expect(TokenType *types, int count) {
   error_at_current("expected token not found");
 }
 
+void expect_end() {
+  expect((TokenType[]){TOKEN_LINE_ENDING, TOKEN_EOF}, 2);
+}
+
 void parse_blank() {
   add_blank(&markup);
 }
@@ -92,7 +96,7 @@ void parse_paragraph() {
   const char *textStart = parser.current.start;
   size_t length = parser.current.length;
   advance_parser();
-  expect((TokenType[]){TOKEN_LINE_ENDING, TOKEN_EOF}, 2);
+  expect_end();
   add_line(&markup, LINE_P, textStart, length);
 }
 
@@ -101,7 +105,7 @@ void parse_heading() {
   const char *textStart = parser.current.start;
   size_t length = parser.current.length;
   advance_parser();
-  expect((TokenType[]){TOKEN_LINE_ENDING, TOKEN_EOF}, 2);
+  expect_end();
 
   switch (type) {
   case TOKEN_HASH:
@@ -147,7 +151,7 @@ void parse_unordered_list() {
     size_t length = parser.current.length;
     advance_parser();
     add_list_item(&markup, start, length);
-    expect((TokenType[]){TOKEN_LINE_ENDING, TOKEN_EOF}, 2);
+    expect_end();
     if (!match((TokenType[]){TOKEN_PLUS, TOKEN_STAR, TOKEN_MINUS}, 3)) break;
   }
   
@@ -162,17 +166,33 @@ void parse_ordered_list() {
     size_t length = parser.current.length;
     advance_parser();
     add_list_item(&markup, start, length);
-    expect((TokenType[]){TOKEN_LINE_ENDING, TOKEN_EOF}, 2);
+    expect_end();
     if (!match((TokenType[]){TOKEN_NUM}, 3)) break;
   }
   
   end_list(&markup, true);
 }
 
+void parse_block_quote() {
+  add_block_quote(&markup);
+  
+  while (true) {
+    parse_line();
+    if (!match((TokenType[]){TOKEN_GT}, 1))
+      break;
+  }
+  expect_end();
+  
+  end_block_quote(&markup);
+}
+
 void parse_element() {
   if (match((TokenType[]){TOKEN_STAR, TOKEN_PLUS, TOKEN_MINUS}, 3))
     parse_unordered_list();
-  if (match((TokenType[]){TOKEN_NUM}, 1)) parse_ordered_list();
+  if (match((TokenType[]){TOKEN_NUM}, 1))
+    parse_ordered_list();
+  if (match((TokenType[]){TOKEN_GT}, 1))
+    parse_block_quote();
   else
     parse_line();
 }
