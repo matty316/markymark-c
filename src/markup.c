@@ -1,4 +1,5 @@
 #include "markup.h"
+#include "line-processor.h"
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,6 +38,8 @@ void html_from_line(const Element *element) {
   strncpy(buffer, line.start, line.length);
   
   buffer[line.length] = '\0';
+  
+  process_line(buffer);
   
   switch (line.type) {
     case LINE_H1:
