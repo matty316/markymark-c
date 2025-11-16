@@ -4,6 +4,7 @@
 # MY_HEADERS at CMakeLists.txt:7 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/matty/projects/markymark-c/include/*.h")
 set(OLD_GLOB
+  "/Users/matty/projects/markymark-c/include/line-processor.h"
   "/Users/matty/projects/markymark-c/include/markup.h"
   "/Users/matty/projects/markymark-c/include/markymark.h"
   "/Users/matty/projects/markymark-c/include/parser.h"
@@ -18,6 +19,7 @@ endif()
 # MY_SOURCES at CMakeLists.txt:6 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/matty/projects/markymark-c/src/*.c")
 set(OLD_GLOB
+  "/Users/matty/projects/markymark-c/src/line-processor.c"
   "/Users/matty/projects/markymark-c/src/main.c"
   "/Users/matty/projects/markymark-c/src/markup.c"
   "/Users/matty/projects/markymark-c/src/markymark.c"

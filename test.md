@@ -49,3 +49,15 @@ func concat(string1: String, string2: String) {
 ___
 
 ![alt text](https://easydrawingguides.com/wp-content/uploads/2017/04/how-to-draw-goku-featured-image-1200.png)
+
+this is a paragraph with *emphasis baby* and here's **more**
+this is a paragraph with **emphasis baby**
+this is a paragraph with ***emphasis baby***
+
+this has `inline code`
+
+this is a paragraph with a link to [sonic the hedgehog](https://www.sonicthehedgehog.com/)
+
+\* this is not a list*
+this is not \*emphasis\*
+this aint \`no code\`
