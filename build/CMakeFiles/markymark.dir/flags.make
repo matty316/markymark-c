@@ -4,7 +4,9 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/matty/markymark/include
+C_INCLUDES = -I/Users/matty/projects/markymark-c/include
 
-C_FLAGS = -Wall -Wextra -g
+C_FLAGSarm64 = -std=gnu2x -arch arm64 -Wall -Wextra -g
+
+C_FLAGS = -std=gnu2x -arch arm64 -Wall -Wextra -g
 

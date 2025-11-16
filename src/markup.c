@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdarg.h>
 
 void init_markup(Markup *markup) {
   size_t initialSize = 20;
@@ -30,7 +31,41 @@ void grow_elements(Markup *markup) {
   markup->capacity = newCapacity;
 }
 
-void html_from_line(const Element *element) {
+void print_ln(const char *str, FILE *file, ...) {
+  va_list args;
+  va_start(args, str);
+  int len = vsnprintf(NULL, 0, str, args);
+  va_end(args);
+  
+  char buffer[len + 1];
+  va_start(args, format);
+  vsnprintf(buffer, sizeof(buffer), str, args);
+
+  va_end(args);
+  
+  if (file != nullptr)
+    fprintf(file, "%s\n", buffer);
+  printf("%s\n", buffer);
+}
+
+void print(const char *str, FILE *file, ...) {
+  va_list args;
+  va_start(args, str);
+  int len = vsnprintf(NULL, 0, str, args);
+  va_end(args);
+  
+  char buffer[len + 1];
+  va_start(args, format);
+  vsnprintf(buffer, sizeof(buffer), str, args);
+
+  va_end(args);
+  
+  if (file != nullptr)
+    fprintf(file, "%s", str);
+  printf("%s", str);
+}
+
+void html_from_line(const Element *element, FILE *file) {
   struct Line line = element->data.line;
   
   char buffer[line.length + 1];
@@ -43,33 +78,33 @@ void html_from_line(const Element *element) {
   
   switch (line.type) {
     case LINE_H1:
-      printf("<h1>%s</h1>\n", buffer);
+      print_ln("<h1>%s</h1>", file, buffer);
       break;
     case LINE_H2:
-      printf("<h2>%s</h2>\n", buffer);
+      print_ln("<h2>%s</h2>", file, buffer);
       break;
     case LINE_H3:
-      printf("<h3>%s</h3>\n", buffer);
+      print_ln("<h3>%s</h3>", file, buffer);
       break;
     case LINE_H4:
-      printf("<h4>%s</h4>\n", buffer);
+      print_ln("<h4>%s</h4>", file, buffer);
       break;
     case LINE_H5:
-      printf("<h5>%s</h5>\n", buffer);
+      print_ln("<h5>%s</h5>", file, buffer);
       break;
     case LINE_H6:
-      printf("<h6>%s</h6>\n", buffer);
+      print_ln("<h6>%s</h6>", file, buffer);
       break;
     case LINE_P:
-      printf("<p>%s</p>\n", buffer);
+      print_ln("<p>%s</p>", file, buffer);
       break;
     case LINE_TEXT:
-      printf("%s\n", buffer);
+      print_ln("%s", file, buffer);
       break;
   }
 }
 
-void html_from_list_item(Element *element) {
+void html_from_list_item(Element *element, FILE *file) {
   struct ListItem listItem = element->data.listItem;
   
   char buffer[listItem.length + 1];
@@ -78,10 +113,10 @@ void html_from_list_item(Element *element) {
   
   buffer[listItem.length] = '\0';
   
-  printf("\t<li>%s</li>\n", buffer);
+  print_ln("\t<li>%s</li>", file, buffer);
 }
 
-void html_from_img(Element *element) {
+void html_from_img(Element *element, FILE *file) {
   struct Img img = element->data.img;
   
   char altBuffer[img.altLength + 1];
@@ -93,53 +128,53 @@ void html_from_img(Element *element) {
   altBuffer[img.altLength] = '\0';
   srcBuffer[img.srcLength] = '\0';
   
-  printf("<img src=\"%s\" alt=\"%s\">\n", srcBuffer, altBuffer);
+  print_ln("<img src=\"%s\" alt=\"%s\">", file, srcBuffer, altBuffer);
 }
 
-const char *html_from_markup(const struct Markup *markup) {
+const char *html_from_markup(const struct Markup *markup, FILE *file) {
   char *html = malloc(sizeof(char));
   for (size_t i = 0; i < markup->numOfElements; i++) {
     Element element = markup->elements[i];
     switch (element.type) {
       case LINE:
-        html_from_line(&element);
+        html_from_line(&element, file);
         break;
       case BLANK: break;
       case ULIST_START:
-        printf("<ul>\n");
+        print_ln("<ul>", file);
         break;
       case ULIST_END:
-        printf("</ul>\n");
+        print_ln("</ul>", file);
         break;
       case OLIST_START:
-        printf("<ol>\n");
+        print_ln("<ol>", file);
         break;
       case OLIST_END:
-        printf("</ol>\n");
+        print_ln("</ol>", file);
         break;
       case LIST_ITEM:
-        html_from_list_item(&element);
+        html_from_list_item(&element, file);
         break;
       case BLOCK_QUOTE_START:
-        printf("<blockquote>\n");
+        print_ln("<blockquote>", file);
         break;
       case BLOCK_QUOTE_END:
-        printf("</blockquote>\n");
+        print_ln("</blockquote>", file);
         break;
       case CODE_BLOCK_START:
-        printf("<pre><code>\n");
+        print_ln("<pre><code>", file);
         break;
       case CODE_BLOCK_END:
-        printf("</code></pre>\n");
+        print_ln("</code></pre>", file);
         break;
       case TAB:
-        printf("\t");
+        print_ln("\t", file);
         break;
       case HR:
-        printf("<hr>\n");
+        print_ln("<hr>", file);
         break;
       case IMG:
-        html_from_img(&element);
+        html_from_img(&element, file);
         break;
     }
   }

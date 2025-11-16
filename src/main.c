@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-void runFile(const char* path) {
-  FILE* file = fopen(path, "rb");
+void runFile(const char* inputPath, const char* outputPath) {
+  FILE* file = fopen(inputPath, "rb");
   
   fseek(file, 0L, SEEK_END);
   size_t fileSize = ftell(file);
@@ -16,15 +16,17 @@ void runFile(const char* path) {
   buffer[bytesRead] = '\0';
   
   fclose(file);
-  parse(buffer);
+  parse(buffer, outputPath);
 }
 
 int main(int argc, const char* argv[]) {
-  if (argc == 2) {
-    runFile(argv[1]);
+  if (argc == 3) {
+    runFile(argv[1], argv[2]);
+  } else if (argc == 2) {
+    runFile(argv[1], nullptr);
   } else {
-    fprintf(stderr, "Usage: markymark [path]\n");
-    exit(64);
+    fprintf(stderr, "Usage: markymark [input] [output]\n");
+    exit(EXIT_FAILURE);
   }
   
   return 0;

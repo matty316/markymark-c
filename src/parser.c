@@ -6,6 +6,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 struct Parser {
   Token current;
@@ -265,4 +266,14 @@ void parse_element() {
     parse_line();
 }
 
-void print_markup() { html_from_markup(&markup); }
+void print_markup() { html_from_markup(&markup, nullptr); }
+
+void create_html(const char *outputPath) {
+  FILE *file = fopen(outputPath, "w");
+  if (file == nullptr) {
+    printf("unable to open file %s", outputPath);
+    exit(EXIT_FAILURE);
+  }
+  html_from_markup(&markup, file);
+  fclose(file);
+}

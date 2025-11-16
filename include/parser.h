@@ -9,5 +9,6 @@ void advance_parser();
 void parse_element();
 void consume(TokenType type, const char *message);
 void print_markup();
+void create_html(const char *outputPath);
 
 #endif
