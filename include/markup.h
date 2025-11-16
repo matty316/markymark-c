@@ -57,6 +57,7 @@ typedef struct Markup {
   struct Element *elements;
   size_t numOfElements;
   size_t capacity;
+  char *html;
 } Markup;
 
 void init_markup(Markup *markup);

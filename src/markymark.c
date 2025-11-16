@@ -3,12 +3,15 @@
 #include "scanner.h"
 #include <stdbool.h>
 
-void parse(const char *input, const char *outputPath) {
+const char *parse(const char *input, const char *outputPath) {
   init_scanner(input);
   init_parser();
+  
+  const char* html;
   if (outputPath == nullptr)
-    print_markup();
+    html = html_string();
   else
-    create_html(outputPath);
+    html = create_html(outputPath);
   free_parser();
+  return html;
 }

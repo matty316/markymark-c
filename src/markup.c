@@ -6,6 +6,8 @@
 #include <string.h>
 #include <stdarg.h>
 
+char *html;
+
 void init_markup(Markup *markup) {
   size_t initialSize = 20;
   markup->elements = malloc(sizeof(Element) * initialSize);
@@ -31,6 +33,24 @@ void grow_elements(Markup *markup) {
   markup->capacity = newCapacity;
 }
 
+void append_string(char **dest, const char *src) {
+  if (*dest == NULL) {
+    *dest = (char *)malloc(strlen(src) + 1);
+    if (*dest == NULL) {
+      perror("Failed to allocate memory");
+      exit(EXIT_FAILURE);
+    }
+    strcpy(*dest, src);
+  } else {
+    *dest = (char *)realloc(*dest, strlen(*dest) + strlen(src) + 1);
+    if (*dest == NULL) {
+      perror("Failed to allocate memory");
+      exit(EXIT_FAILURE);
+    }
+    strcat(*dest, src);
+  }
+}
+
 void print_ln(const char *str, FILE *file, ...) {
   va_list args;
   va_start(args, str);
@@ -46,6 +66,7 @@ void print_ln(const char *str, FILE *file, ...) {
   if (file != nullptr)
     fprintf(file, "%s\n", buffer);
   printf("%s\n", buffer);
+  append_string(&html, buffer);
 }
 
 void print(const char *str, FILE *file, ...) {
@@ -63,6 +84,7 @@ void print(const char *str, FILE *file, ...) {
   if (file != nullptr)
     fprintf(file, "%s", str);
   printf("%s", str);
+  append_string(&html, buffer);
 }
 
 void html_from_line(const Element *element, FILE *file) {
@@ -132,7 +154,6 @@ void html_from_img(Element *element, FILE *file) {
 }
 
 const char *html_from_markup(const struct Markup *markup, FILE *file) {
-  char *html = malloc(sizeof(char));
   for (size_t i = 0; i < markup->numOfElements; i++) {
     Element element = markup->elements[i];
     switch (element.type) {
@@ -178,6 +199,7 @@ const char *html_from_markup(const struct Markup *markup, FILE *file) {
         break;
     }
   }
+  append_string(&html, "\0");
   return html;
 }
 

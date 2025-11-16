@@ -266,14 +266,17 @@ void parse_element() {
     parse_line();
 }
 
-void print_markup() { html_from_markup(&markup, nullptr); }
-
-void create_html(const char *outputPath) {
+const char *create_html(const char *outputPath) {
   FILE *file = fopen(outputPath, "w");
   if (file == nullptr) {
     printf("unable to open file %s", outputPath);
     exit(EXIT_FAILURE);
   }
-  html_from_markup(&markup, file);
+  const char *html = html_from_markup(&markup, file);
   fclose(file);
+  return html;
+}
+
+const char *html_string() {
+  return html_from_markup(&markup, nullptr);
 }
