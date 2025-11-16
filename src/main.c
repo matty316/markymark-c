@@ -16,7 +16,8 @@ void runFile(const char* inputPath, const char* outputPath) {
   buffer[bytesRead] = '\0';
   
   fclose(file);
-  parse(buffer, outputPath);
+  mm_parse(buffer, outputPath);
+  mm_free();
 }
 
 int main(int argc, const char* argv[]) {

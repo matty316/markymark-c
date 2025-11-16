@@ -19,7 +19,10 @@ void init_markup(Markup *markup) {
   markup->capacity = initialSize;
 }
 
-void free_markup(Markup *markup) { free(markup->elements); }
+void free_markup(Markup *markup) {
+  free(markup->elements);
+  free(html);
+}
 
 void grow_elements(Markup *markup) {
   size_t newCapacity = markup->capacity * 2;
@@ -67,6 +70,7 @@ void print_ln(const char *str, FILE *file, ...) {
     fprintf(file, "%s\n", buffer);
   printf("%s\n", buffer);
   append_string(&html, buffer);
+  append_string(&html, "\n");
 }
 
 void print(const char *str, FILE *file, ...) {
