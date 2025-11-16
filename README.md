@@ -7,11 +7,11 @@ a not very fully featured markdown parser written in ~~swift~~ c
 | headers          | yah         | 
 | paragraph        | yah         | 
 | lists            | yah         | 
-| bold             | nah         |
-| italic           | nah         |
-| links            | nah         |
+| bold             | yah         |
+| italic           | yah         |
+| links            | yah         |
 | blockquotes      | yah         |
-| code             | nah         |
+| code             | yah         |
 | images           | yah         |
 | horizontal rules | yah         |
-| escaping         | nah         |
+| escaping         | yah         |

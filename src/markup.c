@@ -130,7 +130,7 @@ const char *html_from_markup(const struct Markup *markup) {
         printf("<pre><code>\n");
         break;
       case CODE_BLOCK_END:
-        printf("</pre></code>\n");
+        printf("</code></pre>\n");
         break;
       case TAB:
         printf("\t");
