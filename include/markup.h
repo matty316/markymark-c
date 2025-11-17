@@ -1,6 +1,7 @@
 #ifndef markup_h
 #define markup_h
 
+#include <stdbool.h>
 #include <stddef.h>
 #include <stdio.h>
 
@@ -66,7 +67,7 @@ const char *html_from_element(const Element *element);
 void add_line(Markup *markup, LineType type, const char *start, size_t length);
 void add_blank(Markup *markup);
 void add_list(Markup *markup, bool ordered);
-void add_list_item(Markup *markup, const char* start, size_t length);
+void add_list_item(Markup *markup, const char *start, size_t length);
 void end_list(Markup *markup, bool ordered);
 void add_block_quote(Markup *markup);
 void end_block_quote(Markup *markup);
@@ -74,7 +75,8 @@ void add_code_block(Markup *markup);
 void end_code_block(Markup *markup);
 void add_tab(Markup *markup);
 void add_hr(Markup *markup);
-void add_img(Markup *markup, const char* altStart, size_t altLength, const char* srcStart, size_t srcLength);
+void add_img(Markup *markup, const char *altStart, size_t altLength,
+             const char *srcStart, size_t srcLength);
 void free_markup(Markup *markup);
 
 #endif
