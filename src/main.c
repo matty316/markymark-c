@@ -18,6 +18,7 @@ void runFile(const char* inputPath, const char* outputPath) {
   fclose(file);
   mm_parse(buffer, outputPath);
   mm_free();
+  free(buffer);
 }
 
 int main(int argc, const char* argv[]) {
