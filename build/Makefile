@@ -118,6 +118,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named mm_lib
+
+# Build rule for target.
+mm_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mm_lib
+.PHONY : mm_lib
+
+# fast build rule for target.
+mm_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/build
+.PHONY : mm_lib/fast
+
+#=============================================================================
 # Target rules for targets named markymark
 
 # Build rule for target.
@@ -135,7 +148,7 @@ src/line-processor.o: src/line-processor.c.o
 
 # target to build an object file
 src/line-processor.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/line-processor.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/line-processor.c.o
 .PHONY : src/line-processor.c.o
 
 src/line-processor.i: src/line-processor.c.i
@@ -143,7 +156,7 @@ src/line-processor.i: src/line-processor.c.i
 
 # target to preprocess a source file
 src/line-processor.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/line-processor.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/line-processor.c.i
 .PHONY : src/line-processor.c.i
 
 src/line-processor.s: src/line-processor.c.s
@@ -151,7 +164,7 @@ src/line-processor.s: src/line-processor.c.s
 
 # target to generate assembly for a file
 src/line-processor.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/line-processor.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/line-processor.c.s
 .PHONY : src/line-processor.c.s
 
 src/main.o: src/main.c.o
@@ -183,7 +196,7 @@ src/markup.o: src/markup.c.o
 
 # target to build an object file
 src/markup.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/markup.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/markup.c.o
 .PHONY : src/markup.c.o
 
 src/markup.i: src/markup.c.i
@@ -191,7 +204,7 @@ src/markup.i: src/markup.c.i
 
 # target to preprocess a source file
 src/markup.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/markup.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/markup.c.i
 .PHONY : src/markup.c.i
 
 src/markup.s: src/markup.c.s
@@ -199,7 +212,7 @@ src/markup.s: src/markup.c.s
 
 # target to generate assembly for a file
 src/markup.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/markup.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/markup.c.s
 .PHONY : src/markup.c.s
 
 src/markymark.o: src/markymark.c.o
@@ -207,7 +220,7 @@ src/markymark.o: src/markymark.c.o
 
 # target to build an object file
 src/markymark.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/markymark.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/markymark.c.o
 .PHONY : src/markymark.c.o
 
 src/markymark.i: src/markymark.c.i
@@ -215,7 +228,7 @@ src/markymark.i: src/markymark.c.i
 
 # target to preprocess a source file
 src/markymark.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/markymark.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/markymark.c.i
 .PHONY : src/markymark.c.i
 
 src/markymark.s: src/markymark.c.s
@@ -223,7 +236,7 @@ src/markymark.s: src/markymark.c.s
 
 # target to generate assembly for a file
 src/markymark.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/markymark.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/markymark.c.s
 .PHONY : src/markymark.c.s
 
 src/parser.o: src/parser.c.o
@@ -231,7 +244,7 @@ src/parser.o: src/parser.c.o
 
 # target to build an object file
 src/parser.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/parser.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/parser.c.o
 .PHONY : src/parser.c.o
 
 src/parser.i: src/parser.c.i
@@ -239,7 +252,7 @@ src/parser.i: src/parser.c.i
 
 # target to preprocess a source file
 src/parser.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/parser.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/parser.c.i
 .PHONY : src/parser.c.i
 
 src/parser.s: src/parser.c.s
@@ -247,7 +260,7 @@ src/parser.s: src/parser.c.s
 
 # target to generate assembly for a file
 src/parser.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/parser.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/parser.c.s
 .PHONY : src/parser.c.s
 
 src/scanner.o: src/scanner.c.o
@@ -255,7 +268,7 @@ src/scanner.o: src/scanner.c.o
 
 # target to build an object file
 src/scanner.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/scanner.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/scanner.c.o
 .PHONY : src/scanner.c.o
 
 src/scanner.i: src/scanner.c.i
@@ -263,7 +276,7 @@ src/scanner.i: src/scanner.c.i
 
 # target to preprocess a source file
 src/scanner.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/scanner.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/scanner.c.i
 .PHONY : src/scanner.c.i
 
 src/scanner.s: src/scanner.c.s
@@ -271,7 +284,7 @@ src/scanner.s: src/scanner.c.s
 
 # target to generate assembly for a file
 src/scanner.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/src/scanner.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/src/scanner.c.s
 .PHONY : src/scanner.c.s
 
 # Help Target
@@ -283,6 +296,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... markymark"
+	@echo "... mm_lib"
 	@echo "... src/line-processor.o"
 	@echo "... src/line-processor.i"
 	@echo "... src/line-processor.s"

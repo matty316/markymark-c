@@ -8,12 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/matty/projects/markymark-c/src/line-processor.c" "CMakeFiles/markymark.dir/src/line-processor.c.o" "gcc" "CMakeFiles/markymark.dir/src/line-processor.c.o.d"
   "/Users/matty/projects/markymark-c/src/main.c" "CMakeFiles/markymark.dir/src/main.c.o" "gcc" "CMakeFiles/markymark.dir/src/main.c.o.d"
-  "/Users/matty/projects/markymark-c/src/markup.c" "CMakeFiles/markymark.dir/src/markup.c.o" "gcc" "CMakeFiles/markymark.dir/src/markup.c.o.d"
-  "/Users/matty/projects/markymark-c/src/markymark.c" "CMakeFiles/markymark.dir/src/markymark.c.o" "gcc" "CMakeFiles/markymark.dir/src/markymark.c.o.d"
-  "/Users/matty/projects/markymark-c/src/parser.c" "CMakeFiles/markymark.dir/src/parser.c.o" "gcc" "CMakeFiles/markymark.dir/src/parser.c.o.d"
-  "/Users/matty/projects/markymark-c/src/scanner.c" "CMakeFiles/markymark.dir/src/scanner.c.o" "gcc" "CMakeFiles/markymark.dir/src/scanner.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

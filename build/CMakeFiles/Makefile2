@@ -63,10 +63,12 @@ CMAKE_BINARY_DIR = /Users/matty/projects/markymark-c/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/mm_lib.dir/all
 all: CMakeFiles/markymark.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
+codegen: CMakeFiles/mm_lib.dir/codegen
 codegen: CMakeFiles/markymark.dir/codegen
 .PHONY : codegen
 
@@ -75,22 +77,55 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/mm_lib.dir/clean
 clean: CMakeFiles/markymark.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/mm_lib.dir
+
+# All Build rule for target.
+CMakeFiles/mm_lib.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/matty/projects/markymark-c/build/CMakeFiles --progress-num=3,4,5,6,7,8 "Built target mm_lib"
+.PHONY : CMakeFiles/mm_lib.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/mm_lib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/matty/projects/markymark-c/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mm_lib.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/matty/projects/markymark-c/build/CMakeFiles 0
+.PHONY : CMakeFiles/mm_lib.dir/rule
+
+# Convenience name for target.
+mm_lib: CMakeFiles/mm_lib.dir/rule
+.PHONY : mm_lib
+
+# codegen rule for target.
+CMakeFiles/mm_lib.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/matty/projects/markymark-c/build/CMakeFiles --progress-num=3,4,5,6,7,8 "Finished codegen for target mm_lib"
+.PHONY : CMakeFiles/mm_lib.dir/codegen
+
+# clean rule for target.
+CMakeFiles/mm_lib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mm_lib.dir/build.make CMakeFiles/mm_lib.dir/clean
+.PHONY : CMakeFiles/mm_lib.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/markymark.dir
 
 # All Build rule for target.
-CMakeFiles/markymark.dir/all:
+CMakeFiles/markymark.dir/all: CMakeFiles/mm_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/matty/projects/markymark-c/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target markymark"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/matty/projects/markymark-c/build/CMakeFiles --progress-num=1,2 "Built target markymark"
 .PHONY : CMakeFiles/markymark.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/markymark.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/matty/projects/markymark-c/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/matty/projects/markymark-c/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/markymark.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/matty/projects/markymark-c/build/CMakeFiles 0
 .PHONY : CMakeFiles/markymark.dir/rule
@@ -102,7 +137,7 @@ markymark: CMakeFiles/markymark.dir/rule
 # codegen rule for target.
 CMakeFiles/markymark.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/markymark.dir/build.make CMakeFiles/markymark.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/matty/projects/markymark-c/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Finished codegen for target markymark"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/matty/projects/markymark-c/build/CMakeFiles --progress-num=1,2 "Finished codegen for target markymark"
 .PHONY : CMakeFiles/markymark.dir/codegen
 
 # clean rule for target.
