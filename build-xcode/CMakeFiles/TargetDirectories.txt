@@ -1,4 +1,0 @@
-/Users/matty/projects/markymark-c/build-xcode/CMakeFiles/mm_lib.dir
-/Users/matty/projects/markymark-c/build-xcode/CMakeFiles/markymark.dir
-/Users/matty/projects/markymark-c/build-xcode/CMakeFiles/ALL_BUILD.dir
-/Users/matty/projects/markymark-c/build-xcode/CMakeFiles/ZERO_CHECK.dir

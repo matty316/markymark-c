@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmm_lib.a "CMakeFiles/mm_lib.dir/src/line-processor.c.o" CMakeFiles/mm_lib.dir/src/markup.c.o CMakeFiles/mm_lib.dir/src/markymark.c.o CMakeFiles/mm_lib.dir/src/parser.c.o CMakeFiles/mm_lib.dir/src/scanner.c.o
-/usr/bin/ranlib libmm_lib.a

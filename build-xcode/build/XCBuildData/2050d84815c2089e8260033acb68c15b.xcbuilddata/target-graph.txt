@@ -1,7 +1,0 @@
-Target dependency graph (3 targets)
-Target 'markymark' in project 'markymark'
-➜ Explicit dependency on target 'mm_lib' in project 'markymark'
-➜ Explicit dependency on target 'ZERO_CHECK' in project 'markymark'
-Target 'mm_lib' in project 'markymark'
-➜ Explicit dependency on target 'ZERO_CHECK' in project 'markymark'
-Target 'ZERO_CHECK' in project 'markymark' (no dependencies)

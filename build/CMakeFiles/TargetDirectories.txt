@@ -1,4 +1,0 @@
-/Users/matty/projects/markymark-c/build/CMakeFiles/mm_lib.dir
-/Users/matty/projects/markymark-c/build/CMakeFiles/markymark.dir
-/Users/matty/projects/markymark-c/build/CMakeFiles/edit_cache.dir
-/Users/matty/projects/markymark-c/build/CMakeFiles/rebuild_cache.dir
