@@ -8,7 +8,7 @@ const char *mm_parse(const char *input, const char *outputPath) {
   init_parser();
   
   const char* html;
-  if (outputPath == nullptr)
+  if (outputPath == NULL)
     html = html_string();
   else
     html = create_html(outputPath);

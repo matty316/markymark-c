@@ -268,7 +268,7 @@ void parse_element() {
 
 const char *create_html(const char *outputPath) {
   FILE *file = fopen(outputPath, "w");
-  if (file == nullptr) {
+  if (file == NULL) {
     printf("unable to open file %s", outputPath);
     exit(EXIT_FAILURE);
   }
@@ -278,5 +278,5 @@ const char *create_html(const char *outputPath) {
 }
 
 const char *html_string() {
-  return html_from_markup(&markup, nullptr);
+  return html_from_markup(&markup, NULL);
 }

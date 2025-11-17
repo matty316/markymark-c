@@ -25,7 +25,7 @@ int main(int argc, const char* argv[]) {
   if (argc == 3) {
     runFile(argv[1], argv[2]);
   } else if (argc == 2) {
-    runFile(argv[1], nullptr);
+    runFile(argv[1], NULL);
   } else {
     fprintf(stderr, "Usage: markymark [input] [output]\n");
     exit(EXIT_FAILURE);

@@ -66,7 +66,7 @@ void print_ln(const char *str, FILE *file, ...) {
 
   va_end(args);
   
-  if (file != nullptr)
+  if (file != NULL)
     fprintf(file, "%s\n", buffer);
   printf("%s\n", buffer);
   append_string(&html, buffer);
@@ -85,7 +85,7 @@ void print(const char *str, FILE *file, ...) {
 
   va_end(args);
   
-  if (file != nullptr)
+  if (file != NULL)
     fprintf(file, "%s", str);
   printf("%s", str);
   append_string(&html, buffer);
