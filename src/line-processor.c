@@ -49,7 +49,7 @@ char advance_char(LineProcessor *lp) {
 
 bool should_stop(LineProcessor *lp) {
   return peek_char(lp) == '*' || peek_char(lp) == '_' || peek_char(lp) == '`' ||
-         peek_char(lp) == '[' || peek_char(lp) == '\\' || is_at_line_end(lp);
+         peek_char(lp) == '[' || peek_char(lp) == '\\' || peek_char(lp) == '~' || is_at_line_end(lp);
 }
 
 void grow_line_elements(LineProcessor *lp) {
@@ -305,7 +305,7 @@ void add_strikethru(LineProcessor *lp) {
   char *text_start = lp->pos;
   size_t text_len = 0;
 
-  while (peek_char(lp) != '~') {
+  while (peek_char(lp) != '~' && !is_at_line_end(lp)) {
     advance_char(lp);
     text_len++;
   }
@@ -355,7 +355,7 @@ char *process_line(struct Line line) {
   while (!is_at_line_end(&lp)) {
     lp.start = lp.pos;
     char c = advance_char(&lp);
-
+    
     switch (c) {
     case '*':
     case '_':
