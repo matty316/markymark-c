@@ -13,5 +13,5 @@ add_executable(markymark "${CMAKE_CURRENT_SOURCE_DIR}/src/main.c")
 
 target_include_directories(mm_lib PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
-target_link_libraries(markymark mm_lib)
-target_compile_options(markymark PRIVATE -Wall -Wextra -g)
+target_link_libraries(markymark mm_lib asan)
+target_compile_options(markymark PRIVATE -Wall -Wextra -g -fsanitize=address)
