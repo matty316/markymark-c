@@ -93,14 +93,8 @@ void print(const char *str, FILE *file, ...) {
 
 void html_from_line(const Element *element, FILE *file) {
   struct Line line = element->data.line;
-
-  char buffer[line.length + 1];
-
-  strncpy(buffer, line.start, line.length);
-
-  buffer[line.length] = '\0';
-
-  process_line(buffer);
+  
+  char *buffer = process_line(line);
 
   switch (line.type) {
   case LINE_H1:
@@ -128,6 +122,7 @@ void html_from_line(const Element *element, FILE *file) {
     print_ln("%s", file, buffer);
     break;
   }
+  free(buffer);
 }
 
 void html_from_list_item(Element *element, FILE *file) {

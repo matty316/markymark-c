@@ -58,6 +58,6 @@ this has `inline code`
 
 this is a paragraph with a link to [sonic the hedgehog](https://www.sonicthehedgehog.com/)
 
-\* this is not a list*
+\* this is not a list
 this is not \*emphasis\*
 this aint \`no code\`
