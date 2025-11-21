@@ -3,6 +3,7 @@
 #include "markup.h"
 
 #include <stdbool.h>
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,6 +19,8 @@ typedef enum {
   LE_LINK_START,
   LE_LINK_MID,
   LE_LINK_CLOSE,
+  LE_STRIKE_OPEN,
+  LE_STRIKE_CLOSE,
   LE_ESCAPE,
 } LineElementType;
 
@@ -46,7 +49,7 @@ char advance_char(LineProcessor *lp) {
 
 bool should_stop(LineProcessor *lp) {
   return peek_char(lp) == '*' || peek_char(lp) == '_' || peek_char(lp) == '`' ||
-         peek_char(lp) == '[' || peek_char(lp) == '\\' || is_at_line_end(lp);
+         peek_char(lp) == '[' || peek_char(lp) == '\\' || peek_char(lp) == '~' || is_at_line_end(lp);
 }
 
 void grow_line_elements(LineProcessor *lp) {
@@ -78,6 +81,11 @@ void add_text_element(LineProcessor *lp) {
   t.type = LE_TEXT;
 
   add_line_element(t, lp);
+}
+
+void add_line_element_type(LineElementType type, LineProcessor *lp) {
+  LineElement e = {.type = type};
+  add_line_element(e, lp);
 }
 
 char *append_element(char *dest, char *src, size_t len) {
@@ -133,6 +141,12 @@ char *build_line(LineProcessor *lp) {
       break;
     case LE_LINK_CLOSE:
       dest = append_element(dest, "</a>", 4);
+      break;
+    case LE_STRIKE_OPEN:
+      dest = append_element(dest, "<s>", 3);
+      break;
+    case LE_STRIKE_CLOSE:
+      dest = append_element(dest, "</s>", 4);
       break;
     case LE_ESCAPE:
       break;
@@ -287,6 +301,26 @@ void add_link(LineProcessor *lp) {
   add_line_element(a_close, lp);
 }
 
+void add_strikethru(LineProcessor *lp) {
+  char *text_start = lp->pos;
+  size_t text_len = 0;
+
+  while (peek_char(lp) != '~' && !is_at_line_end(lp)) {
+    advance_char(lp);
+    text_len++;
+  }
+
+  advance_char(lp);
+  advance_char(lp);
+
+  add_line_element_type(LE_STRIKE_OPEN, lp);
+
+  LineElement te = {.type = LE_TEXT, .start = text_start, .length = text_len};
+  add_line_element(te, lp);
+
+  add_line_element_type(LE_STRIKE_CLOSE, lp);
+}
+
 void add_escape(LineProcessor *lp) {
   LineElement e = {.type = LE_ESCAPE};
   add_line_element(e, lp);
@@ -321,7 +355,7 @@ char *process_line(struct Line line) {
   while (!is_at_line_end(&lp)) {
     lp.start = lp.pos;
     char c = advance_char(&lp);
-
+    
     switch (c) {
     case '*':
     case '_':
@@ -332,6 +366,14 @@ char *process_line(struct Line line) {
       break;
     case '[':
       add_link(&lp);
+      break;
+    case '~':
+      if (peek_char(&lp) == '~') {
+        advance_char(&lp);
+        add_strikethru(&lp);
+      } else {
+        add_text_element(&lp);
+      }
       break;
     case '\\':
       add_escape(&lp);

@@ -61,3 +61,6 @@ this is a paragraph with a link to [sonic the hedgehog](https://www.sonicthehedg
 \* this is not a list
 this is not \*emphasis\*
 this aint \`no code\`
+
+this is a ~~strike~~
+this aint ~not strike~
