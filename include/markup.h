@@ -62,7 +62,7 @@ typedef struct Markup {
 } Markup;
 
 void init_markup(Markup *markup);
-const char *html_from_markup(const Markup *markup, FILE *file);
+const char *html_from_markup(Markup *markup, FILE *file);
 const char *html_from_element(const Element *element);
 void add_line(Markup *markup, LineType type, const char *start, size_t length);
 void add_blank(Markup *markup);

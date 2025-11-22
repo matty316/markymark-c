@@ -6,8 +6,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *html;
-
 void init_markup(Markup *markup) {
   size_t initialSize = 20;
   markup->elements = malloc(sizeof(Element) * initialSize);
@@ -17,11 +15,12 @@ void init_markup(Markup *markup) {
 
   markup->numOfElements = 0;
   markup->capacity = initialSize;
+  markup->html = NULL;
 }
 
 void free_markup(Markup *markup) {
   free(markup->elements);
-  free(html);
+  free(markup->html);
 }
 
 void grow_elements(Markup *markup) {
@@ -54,7 +53,7 @@ void append_string(char **dest, const char *src) {
   }
 }
 
-void print_ln(const char *str, FILE *file, ...) {
+void print_ln(Markup *markup, const char *str, FILE *file, ...) {
   va_list args;
   va_start(args, file);
   int len = vsnprintf(NULL, 0, str, args);
@@ -69,11 +68,11 @@ void print_ln(const char *str, FILE *file, ...) {
   if (file != NULL)
     fprintf(file, "%s\n", buffer);
   printf("%s\n", buffer);
-  append_string(&html, buffer);
-  append_string(&html, "\n");
+  append_string(&markup->html, buffer);
+  append_string(&markup->html, "\n");
 }
 
-void print(const char *str, FILE *file, ...) {
+void print(Markup *markup, const char *str, FILE *file, ...) {
   va_list args;
   va_start(args, file);
   int len = vsnprintf(NULL, 0, str, args);
@@ -88,44 +87,44 @@ void print(const char *str, FILE *file, ...) {
   if (file != NULL)
     fprintf(file, "%s", str);
   printf("%s", str);
-  append_string(&html, buffer);
+  append_string(&markup->html, buffer);
 }
 
-void html_from_line(const Element *element, FILE *file) {
+void html_from_line(Markup *markup, const Element *element, FILE *file) {
   struct Line line = element->data.line;
-  
+
   char *buffer = process_line(line);
 
   switch (line.type) {
   case LINE_H1:
-    print_ln("<h1>%s</h1>", file, buffer);
+    print_ln(markup, "<h1>%s</h1>", file, buffer);
     break;
   case LINE_H2:
-    print_ln("<h2>%s</h2>", file, buffer);
+    print_ln(markup, "<h2>%s</h2>", file, buffer);
     break;
   case LINE_H3:
-    print_ln("<h3>%s</h3>", file, buffer);
+    print_ln(markup, "<h3>%s</h3>", file, buffer);
     break;
   case LINE_H4:
-    print_ln("<h4>%s</h4>", file, buffer);
+    print_ln(markup, "<h4>%s</h4>", file, buffer);
     break;
   case LINE_H5:
-    print_ln("<h5>%s</h5>", file, buffer);
+    print_ln(markup, "<h5>%s</h5>", file, buffer);
     break;
   case LINE_H6:
-    print_ln("<h6>%s</h6>", file, buffer);
+    print_ln(markup, "<h6>%s</h6>", file, buffer);
     break;
   case LINE_P:
-    print_ln("<p>%s</p>", file, buffer);
+    print_ln(markup, "<p>%s</p>", file, buffer);
     break;
   case LINE_TEXT:
-    print_ln("%s", file, buffer);
+    print_ln(markup, "%s", file, buffer);
     break;
   }
   free(buffer);
 }
 
-void html_from_list_item(Element *element, FILE *file) {
+void html_from_list_item(Markup *markup, Element *element, FILE *file) {
   struct ListItem listItem = element->data.listItem;
 
   char buffer[listItem.length + 1];
@@ -134,10 +133,10 @@ void html_from_list_item(Element *element, FILE *file) {
 
   buffer[listItem.length] = '\0';
 
-  print_ln("\t<li>%s</li>", file, buffer);
+  print_ln(markup, "\t<li>%s</li>", file, buffer);
 }
 
-void html_from_img(Element *element, FILE *file) {
+void html_from_img(Markup *markup, Element *element, FILE *file) {
   struct Img img = element->data.img;
 
   char altBuffer[img.altLength + 1];
@@ -149,58 +148,58 @@ void html_from_img(Element *element, FILE *file) {
   altBuffer[img.altLength] = '\0';
   srcBuffer[img.srcLength] = '\0';
 
-  print_ln("<img src=\"%s\" alt=\"%s\">", file, srcBuffer, altBuffer);
+  print_ln(markup, "<img src=\"%s\" alt=\"%s\">", file, srcBuffer, altBuffer);
 }
 
-const char *html_from_markup(const struct Markup *markup, FILE *file) {
+const char *html_from_markup(struct Markup *markup, FILE *file) {
   for (size_t i = 0; i < markup->numOfElements; i++) {
     Element element = markup->elements[i];
     switch (element.type) {
     case LINE:
-      html_from_line(&element, file);
+      html_from_line(markup, &element, file);
       break;
     case BLANK:
       break;
     case ULIST_START:
-      print_ln("<ul>", file);
+      print_ln(markup, "<ul>", file);
       break;
     case ULIST_END:
-      print_ln("</ul>", file);
+      print_ln(markup, "</ul>", file);
       break;
     case OLIST_START:
-      print_ln("<ol>", file);
+      print_ln(markup, "<ol>", file);
       break;
     case OLIST_END:
-      print_ln("</ol>", file);
+      print_ln(markup, "</ol>", file);
       break;
     case LIST_ITEM:
-      html_from_list_item(&element, file);
+      html_from_list_item(markup, &element, file);
       break;
     case BLOCK_QUOTE_START:
-      print_ln("<blockquote>", file);
+      print_ln(markup, "<blockquote>", file);
       break;
     case BLOCK_QUOTE_END:
-      print_ln("</blockquote>", file);
+      print_ln(markup, "</blockquote>", file);
       break;
     case CODE_BLOCK_START:
-      print_ln("<pre><code>", file);
+      print_ln(markup, "<pre><code>", file);
       break;
     case CODE_BLOCK_END:
-      print_ln("</code></pre>", file);
+      print_ln(markup, "</code></pre>", file);
       break;
     case TAB:
-      print_ln("\t", file);
+      print_ln(markup, "\t", file);
       break;
     case HR:
-      print_ln("<hr>", file);
+      print_ln(markup, "<hr>", file);
       break;
     case IMG:
-      html_from_img(&element, file);
+      html_from_img(markup, &element, file);
       break;
     }
   }
-  append_string(&html, "\0");
-  return html;
+  append_string(&markup->html, "\0");
+  return markup->html;
 }
 
 void add_element(Markup *markup, Element element) {
