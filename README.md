@@ -15,3 +15,4 @@ a not very fully featured markdown parser written in ~~swift~~ c
 | images           | yah         |
 | horizontal rules | yah         |
 | escaping         | yah         |
+| strikethru       | yah         |
